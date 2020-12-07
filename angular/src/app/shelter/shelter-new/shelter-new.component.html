@@ -1,3 +1,9 @@
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-toolbar" routerLink="/shelters">Cofnij</button>
+    </div>
+</div>
 <div class="row">
   <div class="col-md-8">
     <form [formGroup]="shelterForm" (ngSubmit)="onSubmit(form)" #form="ngForm">
@@ -74,6 +80,15 @@
           <div class="form group">
             <label for="description">Opis: </label>
             <textarea cols="8" name="description" id="description" class="form-control" formControlName="description"></textarea>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form group">
+            <label for="logo">Link do logo: </label>
+            <input type="text" name="logo" id="logo" class="form-control" formControlName="logo">
           </div>
         </div>
       </div>

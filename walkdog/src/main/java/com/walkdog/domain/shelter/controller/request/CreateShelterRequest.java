@@ -1,6 +1,5 @@
 package com.walkdog.domain.shelter.controller.request;
 
-import com.walkdog.domain.shelter.service.dto.ShelterAddressDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

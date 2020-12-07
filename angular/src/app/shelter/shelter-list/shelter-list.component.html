@@ -1,0 +1,18 @@
+<div class="container">
+    <hr>
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-success" routerLink="/shelters/new">Dodaj schronisko</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-12">
+            <app-shelter-item
+                    *ngFor="let shelter of shelters; let i = index"
+                    [shelter]="shelter"
+                    [index]="i"
+            (click)="goToShelterDetails(shelter)"></app-shelter-item>
+        </div>
+    </div>
+</div>

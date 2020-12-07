@@ -21,6 +21,7 @@ public class ShelterDto {
     private String regon;
     private ShelterAddressDto address;
     private String description;
+    private String imagePath;
     private String createdBy;
     private LocalDate createdAt;
     private String modifiedBy;

@@ -1,0 +1,17 @@
+<a
+        href="#"
+        style="cursor: pointer;"
+        class="list-group-item clearfix">
+    <div class="pull-left">
+        <h4 class="list-group-item-heading">{{ shelter.shelterName }}</h4>
+        <p class="list-group-item-text">{{ shelter.address.streetName }}  {{ shelter.address.houseNumber }}</p>
+        <p class="list-group-item-text">{{ shelter.address.city }}  {{ shelter.address.zipCode }}</p>
+    </div>
+    <span class="pull-right">
+        <img
+                [src]="shelter.imagePath"
+                alt="{{ shelter.shelterName }}"
+                class="img-responsive"
+                style="max-height: 50px;">
+      </span>
+</a>
