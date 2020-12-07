@@ -11,9 +11,8 @@ export class ShelterService {
   }
 
   addShelter(newShelter: Shelter) {
-      const headers = { 'content-type': 'application/json'}
+      const headers = { 'content-type': 'application/json'};
       const body = JSON.stringify(newShelter);
-      console.log(body);
       return this.httpClient.post<any>('http://localhost:8080/shelter', body, {headers}).subscribe();
   }
 

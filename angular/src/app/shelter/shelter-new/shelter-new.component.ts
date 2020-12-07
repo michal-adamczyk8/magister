@@ -38,7 +38,7 @@ export class ShelterEditComponent implements OnInit {
       shelterForm.value.description,
       shelterForm.value.logo
     );
-
+    console.log(newShelter);
     this.shelterService.addShelter(newShelter);
     this.appRouter.navigate(['/shelters']);
   }

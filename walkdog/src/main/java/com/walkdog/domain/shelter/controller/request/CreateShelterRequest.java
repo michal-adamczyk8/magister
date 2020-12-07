@@ -19,4 +19,5 @@ public class CreateShelterRequest {
     private String city;
     private String zipCode;
     private String description;
+    private String imagePath;
 }
