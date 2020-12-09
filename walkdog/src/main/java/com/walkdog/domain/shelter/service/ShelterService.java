@@ -1,6 +1,7 @@
 package com.walkdog.domain.shelter.service;
 
 import com.walkdog.common.abstracts.BaseService;
+import com.walkdog.common.enums.ShelterStatusEnum;
 import com.walkdog.domain.shelter.controller.request.CreateShelterRequest;
 import com.walkdog.domain.shelter.repository.ShelterRepository;
 import com.walkdog.domain.shelter.repository.entity.ShelterEntity;
@@ -33,6 +34,14 @@ public class ShelterService extends BaseService<ShelterDto, ShelterEntity> {
                         .zipCode(request.getZipCode()).build())
                 .description(request.getDescription())
                 .imagePath(request.getImagePath())
+                .websiteUrl(request.getWebsiteUrl())
+                .facebookUrl(request.getFacebookUrl())
+                .twitterUrl(request.getTwitterUrl())
+                .instagramUrl(request.getInstagramUrl())
+                .bankAccount(request.getBankAccount())
+                .swiftCode(request.getSwiftCode())
+                .openingTime(request.getOpeningTime())
+                .status(ShelterStatusEnum.ACTIVE)
                 .createdAt(LocalDate.now())
                 .createdBy("admin").build();
 
@@ -40,10 +49,6 @@ public class ShelterService extends BaseService<ShelterDto, ShelterEntity> {
     }
 
     public List<ShelterDto> getAllShelters() {
-        return mapToDto(shelterRepository.findAll());
-    }
-
-    public ShelterDto getShelterByName(String shelterName) {
-        return mapToDto(shelterRepository.findByShelterName(shelterName));
+        return mapToDto(shelterRepository.findAllByStatus(ShelterStatusEnum.ACTIVE));
     }
 }

@@ -29,9 +29,4 @@ public class ShelterController {
         ShelterDto shelterDto = shelterService.addNewShelter(request);
         return shelterDto.toString();
     }
-
-    @GetMapping("/{shelterName}")
-    public String getShelterByName(@PathVariable String shelterName) {
-        return shelterService.getShelterByName(shelterName).toString();
-    }
 }

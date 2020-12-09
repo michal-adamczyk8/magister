@@ -13,6 +13,7 @@ public class CreateShelterRequest {
     private String email;
     private String nip;
     private String regon;
+    private String krs;
     private String streetName;
     private String houseNumber;
     private String flatNumber;
@@ -20,4 +21,11 @@ public class CreateShelterRequest {
     private String zipCode;
     private String description;
     private String imagePath;
+    private String websiteUrl;
+    private String facebookUrl;
+    private String twitterUrl;
+    private String instagramUrl;
+    private String bankAccount;
+    private String swiftCode;
+    private String openingTime;
 }

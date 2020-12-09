@@ -5,101 +5,187 @@
     </div>
 </div>
 <div class="row">
-  <div class="col-md-8">
-    <form [formGroup]="shelterForm" (ngSubmit)="onSubmit(form)" #form="ngForm">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="form-group">
-            <label for="name">Nazwa: </label>
-            <input type="text" id="name" class="form-control" formControlName="name" placeholder="Nazwa...">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label for="phoneNumber">Telefon kontaktowy: </label>
-            <input type="tel" name="phoneNumber" id="phoneNumber" class="form-control" formControlName="phoneNumber" placeholder="Tel. kontaktowy:...">
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label for="email">Adres email: </label>
-            <input type="email" name="email" id="email" class="form-control" formControlName="email" placeholder="Adres email...">
-          </div>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label for="nip">NIP: </label>
-            <input type="number" name="nip" id="nip" class="form-control" formControlName="nip" placeholder="NIP...">
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label for="regon">REGON: </label>
-            <input type="number" name="regon" id="regon" class="form-control" formControlName="regon" placeholder="REGON...">
-          </div>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="form-group">
-            <label for="streetName">Ulica: </label>
-            <input type="text" name="streetName" id="streetName" class="form-control" formControlName="streetName" placeholder="Ulica...">
-          </div>
-        </div>
-        <div class="col-xs-3">
-          <label for="houseNumber">Numer domu: </label>
-          <input type="text" name="houseNumber" id="houseNumber" class="form-control" formControlName="houseNumber">
-        </div>
-        <div class="col-xs-3">
-          <label for="flatNumber">Numer mieszkania: </label>
-          <input type="text" name="flatNumber" id="flatNumber" class="form-control" formControlName="flatNumber">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-8">
-          <div class="form-group">
-            <label for="city">Miejscowość: </label>
-            <input type="text" name="city" id="city" class="form-control" formControlName="city" placeholder="Miejscowość...">
-          </div>
-        </div>
-        <div class="col-xs-4">
-          <div class="form-group">
-            <label for="zipCode">Kod pocztowy: </label>
-            <input type="number" name="zipCode" id="zipCode" class="form-control" formControlName="zipCode" placeholder="Kod pocztowy...">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="form group">
-            <label for="description">Opis: </label>
-            <textarea cols="8" name="description" id="description" class="form-control" formControlName="description"></textarea>
-          </div>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="form group">
-            <label for="logo">Link do logo: </label>
-            <input type="text" name="logo" id="logo" class="form-control" formControlName="logo">
-          </div>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-xs-3">
-          <div class="form-group">
-            <button type="submit" class="btn btn-success">Dodaj</button>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
+    <div class="col-md-8">
+        <form [formGroup]="shelterForm" (ngSubmit)="onSubmit(form)" #form="ngForm">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Nazwa: </label>
+                        <input type="text" id="name" class="form-control" formControlName="name" placeholder="Nazwa...">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="phoneNumber">Telefon kontaktowy: </label>
+                        <input type="tel" name="phoneNumber" id="phoneNumber" class="form-control"
+                               formControlName="phoneNumber" placeholder="Tel. kontaktowy:...">
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="email">Adres email: </label>
+                        <input type="email" name="email" id="email" class="form-control" formControlName="email"
+                               placeholder="Adres email...">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="nip">NIP: </label>
+                        <input type="text" name="nip" id="nip" class="form-control" formControlName="nip"
+                               placeholder="NIP...">
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="regon">REGON: </label>
+                        <input type="text" name="regon" id="regon" class="form-control" formControlName="regon"
+                               placeholder="REGON...">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="krs">KRS: </label>
+                        <input type="text" name="krs" id="krs" class="form-control" formControlName="krs"
+                               placeholder="KRS...">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="streetName">Ulica: </label>
+                        <input type="text" name="streetName" id="streetName" class="form-control"
+                               formControlName="streetName" placeholder="Ulica...">
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <label for="houseNumber">Numer domu: </label>
+                    <input type="text" name="houseNumber" id="houseNumber" class="form-control"
+                           formControlName="houseNumber">
+                </div>
+                <div class="col-xs-3">
+                    <label for="flatNumber">Numer mieszkania: </label>
+                    <input type="text" name="flatNumber" id="flatNumber" class="form-control"
+                           formControlName="flatNumber">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label for="city">Miejscowość: </label>
+                        <input type="text" name="city" id="city" class="form-control" formControlName="city"
+                               placeholder="Miejscowość...">
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="form-group">
+                        <label for="zipCode">Kod pocztowy: </label>
+                        <input type="number" name="zipCode" id="zipCode" class="form-control" formControlName="zipCode"
+                               placeholder="Kod pocztowy...">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="description">Opis: </label>
+                        <textarea cols="8" name="description" id="description" class="form-control"
+                                  formControlName="description"></textarea>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="websiteUrl">Link do strony internetowej: </label>
+                        <input type="text" name="websiteUrl" id="websiteUrl" class="form-control"
+                               formControlName="websiteUrl" placeholder="Strona internetowa...">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="facebookUrl">Link do strony Facebook: </label>
+                        <input type="text" name="facebookUrl" id="facebookUrl" class="form-control"
+                               formControlName="facebookUrl" placeholder="Profil Facebook...">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="instagramUrl">Link do strony Instagram: </label>
+                        <input type="text" name="instagramUrl" id="instagramUrl" class="form-control"
+                               formControlName="instagramUrl" placeholder="Profil Instagram...">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label for="twitterUrl">Link do strony Twitter: </label>
+                        <input type="text" name="twitterUrl" id="twitterUrl" class="form-control"
+                               formControlName="twitterUrl" placeholder="Profil Twitter...">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="logo">Link do logo: </label>
+                        <input type="text" name="logo" id="logo" class="form-control" formControlName="logo">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="openingTime">Godziny otwarcia: </label>
+                        <textarea cols="8" name="openingTime" id="openingTime" class="form-control"
+                                  formControlName="openingTime"></textarea>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-10">
+                    <div class="form-group">
+                        <label for="bankAccount">Numer rachunku bankowego: </label>
+                        <input type="text" name="bankAccount" id="bankAccount" class="form-control"
+                               formControlName="bankAccount" placeholder="Nr rachunku bankowego...">
+                    </div>
+                </div>
+                <div class="col-xs-10">
+                    <div class="form-group">
+                        <label for="swiftCode">Kod SWIFT: </label>
+                        <input type="text" name="swiftCode" id="swiftCode" class="form-control"
+                               formControlName="swiftCode" placeholder="Kod SWIFT...">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">Dodaj</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

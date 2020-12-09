@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import {Shelter} from '../shelter-shared/shelter';
 import {ShelterService} from '../shelter-shared/shelter.service';
@@ -7,57 +7,72 @@ import {Router} from '@angular/router';
 
 
 @Component({
-  selector: 'app-shelter-edit',
-  templateUrl: './shelter-new.component.html',
-  styleUrls: ['./shelter-new.component.css']
+    selector: 'app-shelter-edit',
+    templateUrl: './shelter-new.component.html',
+    styleUrls: ['./shelter-new.component.css']
 })
 export class ShelterEditComponent implements OnInit {
-  shelterForm: FormGroup;
+    shelterForm: FormGroup;
 
-  constructor(private shelterService: ShelterService, private appRouter: Router) { }
+    constructor(private shelterService: ShelterService, private appRouter: Router) {
+    }
 
-  ngOnInit() {
-    this.onInit();
-  }
+    ngOnInit() {
+        this.onInit();
+    }
 
-  onSubmit(shelterForm: NgForm) {
-    const shelterAddress = new ShelterAddress(
-        shelterForm.value.streetName,
-        shelterForm.value.houseNumber,
-        shelterForm.value.flatNumber,
-        shelterForm.value.city,
-        shelterForm.value.zipCode
+    onSubmit(shelterForm: NgForm) {
+        const shelterAddress = new ShelterAddress(
+            shelterForm.value.streetName,
+            shelterForm.value.houseNumber,
+            shelterForm.value.flatNumber,
+            shelterForm.value.city,
+            shelterForm.value.zipCode
+        );
+        const newShelter = new Shelter(
+            shelterForm.value.name,
+            shelterForm.value.phoneNumber,
+            shelterForm.value.email,
+            shelterForm.value.nip,
+            shelterForm.value.regon,
+            shelterForm.value.krs,
+            shelterAddress,
+            shelterForm.value.description,
+            shelterForm.value.logo,
+            shelterForm.value.websiteUrl,
+            shelterForm.value.facebookUrl,
+            shelterForm.value.twitterUrl,
+            shelterForm.value.instagramUrl,
+            shelterForm.value.bankAccount,
+            shelterForm.value.swiftCode,
+            shelterForm.value.openingTime
     );
-    const newShelter = new Shelter(
-      shelterForm.value.name,
-      shelterForm.value.phoneNumber,
-      shelterForm.value.email,
-      shelterForm.value.nip,
-      shelterForm.value.regon,
-      shelterAddress,
-      shelterForm.value.description,
-      shelterForm.value.logo
-    );
-    console.log(newShelter);
-    this.shelterService.addShelter(newShelter);
-    this.appRouter.navigate(['/shelters']);
-  }
+        this.shelterService.addShelter(newShelter);
+        this.appRouter.navigate(['/shelters']);
+    }
 
-  onInit() {
-    this.shelterForm = new FormGroup({
-      name: new FormControl(null, Validators.required),
-      phoneNumber: new FormControl(null, Validators.required),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      nip: new FormControl(null, Validators.required),
-      regon: new FormControl(null, Validators.required),
-      streetName: new FormControl(null, Validators.required),
-      houseNumber: new FormControl(null, Validators.required),
-      flatNumber: new FormControl(null),
-      city: new FormControl(null, Validators.required),
-      zipCode: new FormControl(null, Validators.required),
-      description: new FormControl(null),
-      logo: new FormControl(null)
-    });
-  }
-
+    onInit() {
+        this.shelterForm = new FormGroup({
+            name: new FormControl(null, Validators.required),
+            phoneNumber: new FormControl(null, Validators.required),
+            email: new FormControl(null, [Validators.required, Validators.email]),
+            nip: new FormControl(null, Validators.required),
+            regon: new FormControl(null, Validators.required),
+            krs: new FormControl(null),
+            streetName: new FormControl(null, Validators.required),
+            houseNumber: new FormControl(null, Validators.required),
+            flatNumber: new FormControl(null),
+            city: new FormControl(null, Validators.required),
+            zipCode: new FormControl(null, Validators.required),
+            description: new FormControl(null),
+            websiteUrl: new FormControl(null, Validators.required),
+            facebookUrl: new FormControl(null),
+            instagramUrl: new FormControl(null),
+            twitterUrl: new FormControl(null),
+            openingTime: new FormControl(null),
+            bankAccount: new FormControl(null),
+            swiftCode: new FormControl(null),
+            logo: new FormControl(null)
+        });
+    }
 }
