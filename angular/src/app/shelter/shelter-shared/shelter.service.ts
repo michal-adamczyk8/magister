@@ -1,26 +1,28 @@
-
 import {Shelter} from './shelter';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Subject} from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 export class ShelterService {
-  constructor(private httpClient: HttpClient) {
-  }
+    sheltersChanged = new Subject<Shelter[]>();
+    private shelters: Shelter[] = [];
 
-  addShelter(newShelter: Shelter) {
-      const headers = { 'content-type': 'application/json'};
-      const body = JSON.stringify(newShelter);
-      return this.httpClient.post<any>('http://localhost:8080/shelter', body, {headers}).subscribe();
-  }
+    constructor(private httpClient: HttpClient) {
+    }
 
-  getAllShelters() {
-      return this.httpClient.get<Shelter[]>('http://localhost:8080/shelter/all');
-  }
+    addShelter(newShelter: Shelter) {
+        const headers = {'content-type': 'application/json'};
+        const body = JSON.stringify(newShelter);
+        this.shelters.push(newShelter);
+        this.sheltersChanged.next(this.shelters.slice());
+        return this.httpClient.post<any>('http://localhost:8080/shelter', body, {headers}).subscribe(
+        );
+    }
 
-    getShelterByName(shelterName: string) {
-      return this.httpClient.get<Shelter>(`http://localhost:8080/shelter/${shelterName}`);
+    getAllShelters() {
+        return this.httpClient.get<Shelter[]>('http://localhost:8080/shelter/all');
     }
 }

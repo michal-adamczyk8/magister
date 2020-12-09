@@ -25,7 +25,6 @@ public class ShelterController {
 
     @PostMapping
     public String createNewShelter(@RequestBody CreateShelterRequest request) {
-        System.out.println(request);
         ShelterDto shelterDto = shelterService.addNewShelter(request);
         return shelterDto.toString();
     }

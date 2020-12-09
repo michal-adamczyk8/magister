@@ -2,19 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa7af189-6abb-4e98-a604-62a909af56f6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/protractor.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/protractor.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/app.e2e-spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/e2e/src/app.po.ts" beforeDir="false" afterPath="$PROJECT_DIR$/e2e/src/app.po.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/karma.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/karma.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/header/header.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/header/header.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter-details/shelter-details.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shelter/shelter-details/shelter-details.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter-list/shelter-item/shelter-item.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shelter/shelter-list/shelter-item/shelter-item.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter-list/shelter-item/shelter-item.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shelter/shelter-list/shelter-item/shelter-item.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter-list/shelter-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shelter/shelter-list/shelter-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter-list/shelter-list.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shelter/shelter-list/shelter-list.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter-list/shelter-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shelter/shelter-list/shelter-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter-new/shelter-new.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shelter/shelter-new/shelter-new.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter-new/shelter-new.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shelter/shelter-new/shelter-new.component.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter-new/shelter-new.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shelter/shelter-new/shelter-new.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter-shared/shelter.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shelter/shelter-shared/shelter.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter-shared/shelter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shelter/shelter-shared/shelter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter-shared/shelterAddress.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shelter/shelter.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shelter/shelter.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shelter/shelter.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/polyfills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../walkdog/src/main/java/com/walkdog/domain/shelter/controller/ShelterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../walkdog/src/main/java/com/walkdog/domain/shelter/controller/ShelterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../walkdog/src/main/java/com/walkdog/domain/shelter/controller/request/CreateShelterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../walkdog/src/main/java/com/walkdog/domain/shelter/controller/request/CreateShelterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../walkdog/src/main/java/com/walkdog/domain/shelter/repository/ShelterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../walkdog/src/main/java/com/walkdog/domain/shelter/repository/ShelterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../walkdog/src/main/java/com/walkdog/domain/shelter/repository/entity/ShelterEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../walkdog/src/main/java/com/walkdog/domain/shelter/repository/entity/ShelterEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../walkdog/src/main/java/com/walkdog/domain/shelter/service/ShelterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../walkdog/src/main/java/com/walkdog/domain/shelter/service/ShelterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../walkdog/src/main/java/com/walkdog/domain/shelter/service/dto/ShelterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../walkdog/src/main/java/com/walkdog/domain/shelter/service/dto/ShelterDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../walkdog/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../walkdog/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../walkdog/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../walkdog/src/main/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,6 +298,17 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="E2E Tests" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -356,6 +391,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/app/shelter/shelter.component.css">

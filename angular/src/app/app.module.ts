@@ -8,14 +8,14 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {ShelterComponent} from './shelter/shelter.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ShelterListComponent} from './shelter/shelter-list/shelter-list.component';
-import { ShelterDetailsComponent } from './shelter/shelter-details/shelter-details.component';
-import { ShelterItemComponent } from './shelter/shelter-list/shelter-item/shelter-item.component';
+import {ShelterDetailsComponent} from './shelter/shelter-details/shelter-details.component';
+import {ShelterItemComponent} from './shelter/shelter-list/shelter-item/shelter-item.component';
 import {ShelterService} from './shelter/shelter-shared/shelter.service';
 import {RouterModule, Routes} from '@angular/router';
 
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: '/shelters', pathMatch: 'full' },
+    {path: '', redirectTo: '/shelters', pathMatch: 'full'},
     {
         path: 'shelters',
         component: ShelterListComponent,

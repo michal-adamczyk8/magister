@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import {Shelter} from '../shelter-shared/shelter';
 import {ShelterService} from '../shelter-shared/shelter.service';
-import {ShelterAddress} from '../shelter-shared/shelterAddress';
 import {Router} from '@angular/router';
 
 
@@ -22,13 +21,6 @@ export class ShelterEditComponent implements OnInit {
     }
 
     onSubmit(shelterForm: NgForm) {
-        const shelterAddress = new ShelterAddress(
-            shelterForm.value.streetName,
-            shelterForm.value.houseNumber,
-            shelterForm.value.flatNumber,
-            shelterForm.value.city,
-            shelterForm.value.zipCode
-        );
         const newShelter = new Shelter(
             shelterForm.value.name,
             shelterForm.value.phoneNumber,
@@ -36,7 +28,11 @@ export class ShelterEditComponent implements OnInit {
             shelterForm.value.nip,
             shelterForm.value.regon,
             shelterForm.value.krs,
-            shelterAddress,
+            shelterForm.value.streetName,
+            shelterForm.value.houseNumber,
+            shelterForm.value.flatNumber,
+            shelterForm.value.city,
+            shelterForm.value.zipCode,
             shelterForm.value.description,
             shelterForm.value.logo,
             shelterForm.value.websiteUrl,
@@ -46,7 +42,7 @@ export class ShelterEditComponent implements OnInit {
             shelterForm.value.bankAccount,
             shelterForm.value.swiftCode,
             shelterForm.value.openingTime
-    );
+        );
         this.shelterService.addShelter(newShelter);
         this.appRouter.navigate(['/shelters']);
     }
