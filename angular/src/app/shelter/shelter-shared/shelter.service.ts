@@ -19,4 +19,8 @@ export class ShelterService {
   getAllShelters() {
       return this.httpClient.get<Shelter[]>('http://localhost:8080/shelter/all');
   }
+
+    getShelterByName(shelterName: string) {
+      return this.httpClient.get<Shelter>(`http://localhost:8080/shelter/${shelterName}`);
+    }
 }

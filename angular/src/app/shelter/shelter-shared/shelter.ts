@@ -2,13 +2,13 @@ import {ShelterAddress} from './shelterAddress';
 
 export class Shelter {
   constructor(
-    shelterName: string,
-    phoneNumber: string,
-    email: string,
-    nip: string,
-    regon: string,
-    address: ShelterAddress,
-    description: string,
-    imagePath: string) {
+    public shelterName: string,
+    public phoneNumber: string,
+    public email: string,
+    public nip: string,
+    public regon: string,
+    public address: ShelterAddress,
+    public description: string,
+    public imagePath: string) {
   }
 }

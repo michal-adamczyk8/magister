@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Shelter} from '../../shelter-shared/shelter';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-shelter-item',
@@ -10,9 +11,13 @@ export class ShelterItemComponent implements OnInit {
     @Input() shelter: Shelter;
     @Input() index: number;
 
-    constructor() {
+    constructor(private appRouter: Router) {
     }
 
     ngOnInit() {
+    }
+
+    onNavToDetailsComponent(shelter: Shelter) {
+        this.appRouter.navigate(['shelter', shelter.shelterName], {state: {data: shelter}});
     }
 }

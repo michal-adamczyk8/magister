@@ -21,8 +21,4 @@ export class ShelterListComponent implements OnInit {
             }
         );
     }
-    goToShelterDetails(shelter: Shelter) {
-
-    }
-
 }

@@ -42,4 +42,8 @@ public class ShelterService extends BaseService<ShelterDto, ShelterEntity> {
     public List<ShelterDto> getAllShelters() {
         return mapToDto(shelterRepository.findAll());
     }
+
+    public ShelterDto getShelterByName(String shelterName) {
+        return mapToDto(shelterRepository.findByShelterName(shelterName));
+    }
 }

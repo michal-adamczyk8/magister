@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
-import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {ShelterEditComponent} from './shelter/shelter-new/shelter-new.component';
@@ -20,20 +19,9 @@ const appRoutes: Routes = [
     {
         path: 'shelters',
         component: ShelterListComponent,
-        // children: [
-        //     { path: 'new', component: ShelterEditComponent },
-        //     {
-        //         path: ':id',
-        //         component: ShelterDetailsComponent,
-        //     },
-        //     {
-        //         path: ':id/edit',
-        //         component: ShelterEditComponent,
-        //     }
-        // ]
     },
     {path: 'shelters/new', component: ShelterEditComponent},
-    {path: 'shelter/:id', component: ShelterDetailsComponent}
+    {path: 'shelter/:shelterName', component: ShelterDetailsComponent}
 ];
 
 @NgModule({
