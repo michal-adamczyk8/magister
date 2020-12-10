@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface ShelterRepository extends JpaRepository<ShelterEntity, Long> {
     List<ShelterEntity> findAllByStatus(ShelterStatusEnum statusEnum);
+
+    ShelterEntity findByShelterId(Long id);
 }

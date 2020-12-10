@@ -54,4 +54,12 @@ public class ShelterService extends BaseService<ShelterDto, ShelterEntity> {
     public List<ShelterDto> getAllShelters() {
         return mapToDto(shelterRepository.findAllByStatus(ShelterStatusEnum.ACTIVE));
     }
+
+    public ShelterDto deleteShelter(Long shelterId) {
+        ShelterDto shelterDto = mapToDto(shelterRepository.findByShelterId(shelterId));
+        shelterDto.setStatus(ShelterStatusEnum.DELETED);
+        shelterDto.setModifiedBy("admin");
+        shelterDto.setModifiedAt(LocalDate.now());
+        return mapToDto(shelterRepository.save(mapToEntity(shelterDto)));
+    }
 }

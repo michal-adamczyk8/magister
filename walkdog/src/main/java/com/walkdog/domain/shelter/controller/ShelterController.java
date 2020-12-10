@@ -28,4 +28,9 @@ public class ShelterController {
         ShelterDto shelterDto = shelterService.addNewShelter(request);
         return shelterDto.toString();
     }
+
+    @DeleteMapping(path = "/{id}")
+    public String deleteShelter(@PathVariable Long id) {
+        return shelterService.deleteShelter(id).toString();
+    }
 }
