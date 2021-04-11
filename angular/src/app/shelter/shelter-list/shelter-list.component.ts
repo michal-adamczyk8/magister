@@ -23,9 +23,9 @@ export class ShelterListComponent implements OnInit, OnDestroy {
             }
         );
 
-        this.subscription = this.shelterService.sheltersChanged.subscribe((sheltersChanged: Shelter[]) => {
-            this.shelters = sheltersChanged;
-        });
+        // this.subscription = this.shelterService.sheltersChanged.subscribe((sheltersChanged: Shelter[]) => {
+        //     this.shelters = sheltersChanged;
+        // });
     }
 
     ngOnDestroy() {

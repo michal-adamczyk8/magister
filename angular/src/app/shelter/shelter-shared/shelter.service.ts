@@ -18,7 +18,6 @@ export class ShelterService {
         const headers = {'content-type': 'application/json'};
         const body = JSON.stringify(newShelter);
         this.shelters.push(newShelter);
-        this.sheltersChanged.next(this.shelters.slice());
         return this.httpClient.post<any>('http://localhost:8080/shelter', body, {headers}).subscribe(
         );
     }
