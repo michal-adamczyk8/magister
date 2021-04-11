@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @Table(name = "shelter_address")
 @Data
 public class ShelterAddressEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_shelter_address_id")
     @SequenceGenerator(name="sequence_shelter_address_id", sequenceName = "sequence_shelter_address_id", allocationSize = 1)

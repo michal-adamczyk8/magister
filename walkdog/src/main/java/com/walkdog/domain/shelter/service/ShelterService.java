@@ -25,6 +25,7 @@ public class ShelterService extends BaseService<ShelterDto, ShelterEntity> {
                 .email(request.getEmail())
                 .nip(request.getNip())
                 .regon(request.getRegon())
+                .krs(request.getKrs())
                 .description(request.getDescription())
                 .address(ShelterAddressDto.builder()
                         .streetName(request.getStreetName())

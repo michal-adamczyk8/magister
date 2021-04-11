@@ -14,6 +14,7 @@ export class ShelterService {
     }
 
     addShelter(newShelter: Shelter) {
+        console.log('submitting service -enter')
         const headers = {'content-type': 'application/json'};
         const body = JSON.stringify(newShelter);
         this.shelters.push(newShelter);
