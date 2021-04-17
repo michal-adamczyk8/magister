@@ -1,12 +1,18 @@
 <hr>
 <div class="row">
-    <div class="col-xs-12">
-        <button class="btn btn-toolbar" routerLink="/shelters">Cofnij</button>
-    </div>
-</div>
-<div class="row">
     <div class="col-md-8">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" [formGroup]="shelterForm">
+                <div class="row">
+                        <div class="col-xs-1">
+                            <button class="btn btn-toolbar" routerLink="/shelters">Cofnij</button>
+                        </div>
+                    
+                        <div class="col-xs-1">
+                            <div class="form-group">
+                                <button class="btn btn-success" type="submit">Dodaj</button>
+                            </div>
+                        </div>
+                    </div>
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
@@ -277,12 +283,16 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col-xs-3">
-                    <div class="form-group">
-                        <button class="btn btn-success" type="submit">Dodaj</button>
+                    <div class="col-xs-1">
+                        <button class="btn btn-toolbar" routerLink="/shelters">Cofnij</button>
+                    </div>
+                
+                    <div class="col-xs-1">
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Dodaj</button>
+                        </div>
                     </div>
                 </div>
-            </div>
         </form>
     </div>
 </div>
