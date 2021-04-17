@@ -9,9 +9,8 @@ import {Subscription} from 'rxjs';
     templateUrl: './shelter-list.component.html',
     styleUrls: ['./shelter-list.component.css']
 })
-export class ShelterListComponent implements OnInit, OnDestroy {
+export class ShelterListComponent implements OnInit {
     shelters: Shelter[];
-    private subscription: Subscription;
 
     constructor(private shelterService: ShelterService, private appRouter: Router) {
     }
@@ -22,13 +21,5 @@ export class ShelterListComponent implements OnInit, OnDestroy {
                 this.shelters = response;
             }
         );
-
-        // this.subscription = this.shelterService.sheltersChanged.subscribe((sheltersChanged: Shelter[]) => {
-        //     this.shelters = sheltersChanged;
-        // });
-    }
-
-    ngOnDestroy() {
-        this.subscription.unsubscribe();
     }
 }

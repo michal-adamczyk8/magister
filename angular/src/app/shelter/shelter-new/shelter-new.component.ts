@@ -3,6 +3,7 @@ import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import {Shelter} from '../shelter-shared/shelter';
 import {ShelterService} from '../shelter-shared/shelter.service';
 import {Router} from '@angular/router';
+import { CustomValidators } from 'src/app/validators/custom-validators';
 
 
 @Component({
@@ -21,6 +22,10 @@ export class ShelterEditComponent implements OnInit {
     }
 
     onSubmit(shelterForm: NgForm) {
+        if(this.shelterForm.invalid) {
+            this.shelterForm.markAllAsTouched();
+            return;
+        }
         const newShelter = new Shelter(
             shelterForm.value.name,
             shelterForm.value.phoneNumber,
@@ -49,26 +54,70 @@ export class ShelterEditComponent implements OnInit {
 
     onInit() {
         this.shelterForm = new FormGroup({
-            name: new FormControl(null, Validators.required),
-            phoneNumber: new FormControl(null, Validators.required),
-            email: new FormControl(null, [Validators.required, Validators.email]),
-            nip: new FormControl(null, Validators.required),
-            regon: new FormControl(null, Validators.required),
+            name: new FormControl(null, [Validators.minLength(3), CustomValidators.notOnlyWhitespace]),
+            phoneNumber: new FormControl(null, [CustomValidators.notOnlyWhitespace, Validators.minLength(3)]),
+            email: new FormControl(null, [CustomValidators.notOnlyWhitespace, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.]+\\.[a-z]{2,15}$')]),
+            nip: new FormControl(null, [CustomValidators.notOnlyWhitespace, CustomValidators.exactLength(10)]),
+            regon: new FormControl(null, [CustomValidators.notOnlyWhitespace, CustomValidators.exactTwoLengths(9, 14)]),
             krs: new FormControl(null),
-            streetName: new FormControl(null, Validators.required),
-            houseNumber: new FormControl(null, Validators.required),
+            streetName: new FormControl(null, [CustomValidators.notOnlyWhitespace, Validators.minLength(3)]),
+            houseNumber: new FormControl(null, CustomValidators.notOnlyWhitespace),
             flatNumber: new FormControl(null),
-            city: new FormControl(null, Validators.required),
-            zipCode: new FormControl(null, Validators.required),
+            city: new FormControl(null, [CustomValidators.notOnlyWhitespace, Validators.minLength(3)]),
+            zipCode: new FormControl(null, [CustomValidators.notOnlyWhitespace, Validators.pattern('[0-9]{2}-[0-9]{3}')]),
             description: new FormControl(null),
-            websiteUrl: new FormControl(null, Validators.required),
+            websiteUrl: new FormControl(null, CustomValidators.notOnlyWhitespace),
             facebookUrl: new FormControl(null),
             instagramUrl: new FormControl(null),
             twitterUrl: new FormControl(null),
             openingTime: new FormControl(null),
-            bankAccount: new FormControl(null),
+            bankAccount: new FormControl(null, CustomValidators.notOnlyWhitespace),
             swiftCode: new FormControl(null),
             logo: new FormControl(null)
         });
+    }
+
+    get name() {
+        return this.shelterForm.get('name');
+    }
+
+    get phoneNumber() {
+        return this.shelterForm.get('phoneNumber');
+    }
+
+    get email() {
+        return this.shelterForm.get('email');
+    }
+
+    get nip() {
+        return this.shelterForm.get('nip');
+    }
+
+    get regon() {
+        return this.shelterForm.get('regon');
+    }
+
+    get streetName() {
+        return this.shelterForm.get('streetName');
+    }
+
+    get houseNumber() {
+        return this.shelterForm.get('houseNumber');
+    }
+
+    get city() {
+        return this.shelterForm.get('city');
+    }
+
+    get zipCode() {
+        return this.shelterForm.get('zipCode');
+    }
+
+    get websiteUrl() {
+        return this.shelterForm.get('websiteUrl');
+    }
+
+    get bankAccount() {
+        return this.shelterForm.get('bankAccount');
     }
 }
