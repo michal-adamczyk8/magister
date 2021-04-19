@@ -9,6 +9,7 @@ import com.walkdog.domain.pet.controller.request.CreatePetRequest;
 import com.walkdog.domain.pet.repository.PetRepository;
 import com.walkdog.domain.pet.repository.entity.PetEntity;
 import com.walkdog.domain.shelter.service.ShelterService;
+import com.walkdog.domain.shelter.service.dto.ShelterDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +24,10 @@ public class PetService extends BaseService<PetDto, PetEntity> {
     private final ShelterService shelterService;
 
 
-    public List<PetDto> getAllPetsByShelter(Long shelterId) {
-        return mapToDto(petRepository.findAllByShelterIdAndStatusNotIn(shelterId, List.of(PetStatusEnum.ADOPTED, PetStatusEnum.DELETED)));
+    public List<PetDto> getAllPetsByShelter(Long shelterId) throws ResourceNotFoundException {
+        ShelterDto shelterDto = shelterService.getActiveShelterById(shelterId);
+
+        return mapToDto(petRepository.findAllByShelterIdAndStatusNotIn(shelterDto.getId(), List.of(PetStatusEnum.ADOPTED, PetStatusEnum.DELETED)));
     }
 
     public PetDto addNewPet(CreatePetRequest request) throws ResourceNotFoundException {

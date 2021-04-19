@@ -19,7 +19,7 @@ public class PetController {
     private final PetService petService;
 
     @GetMapping(path = "/all/{shelterId}")
-    public List<PetDto> getAllShelterActivePets(@PathVariable Long shelterId) {
+    public List<PetDto> getAllShelterActivePets(@PathVariable Long shelterId) throws ResourceNotFoundException {
         return petService.getAllPetsByShelter(shelterId);
     }
 

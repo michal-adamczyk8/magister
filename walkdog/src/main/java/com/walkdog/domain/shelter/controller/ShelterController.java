@@ -1,5 +1,6 @@
 package com.walkdog.domain.shelter.controller;
 
+import com.walkdog.common.exceptions.ResourceNotFoundException;
 import com.walkdog.domain.shelter.controller.request.CreateShelterRequest;
 import com.walkdog.domain.shelter.service.ShelterService;
 import com.walkdog.domain.shelter.service.dto.ShelterAddressDto;
@@ -31,7 +32,7 @@ public class ShelterController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public String deleteShelter(@PathVariable Long id) {
+    public String deleteShelter(@PathVariable Long id) throws ResourceNotFoundException {
         return shelterService.deleteShelter(id).toString();
     }
 }

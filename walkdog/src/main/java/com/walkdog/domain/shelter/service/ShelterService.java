@@ -59,8 +59,11 @@ public class ShelterService extends BaseService<ShelterDto, ShelterEntity> {
         return mapToDto(shelterRepository.findAllByStatus(ShelterStatusEnum.ACTIVE));
     }
 
-    public ShelterDto deleteShelter(Long shelterId) {
-        ShelterDto shelterDto = mapToDto(shelterRepository.findById(shelterId).orElseGet(null));
+    public ShelterDto deleteShelter(Long shelterId) throws ResourceNotFoundException {
+        ShelterDto shelterDto = mapToDto(shelterRepository.findById(shelterId).orElse(null));
+        if (Objects.isNull(shelterDto)) {
+            throw new ResourceNotFoundException(String.format(ErrorCodes.SHELTER_NOT_FOUND_ERROR_CODE, shelterId));
+        }
         shelterDto.setStatus(ShelterStatusEnum.DELETED);
         shelterDto.setModifiedBy("admin");
         shelterDto.setModifiedAt(LocalDate.now());
@@ -68,12 +71,12 @@ public class ShelterService extends BaseService<ShelterDto, ShelterEntity> {
     }
 
     public ShelterDto getActiveShelterById(Long shelterId) throws ResourceNotFoundException {
-        ShelterDto shelter =  mapToDto(shelterRepository.findById(shelterId).orElseGet(null));
+        ShelterDto shelter =  mapToDto(shelterRepository.findById(shelterId).orElse(null));
         if (Objects.isNull(shelter)) {
-            throw new ResourceNotFoundException(ErrorCodes.SHELTER_NOT_FOUND_ERROR_CODE);
+            throw new ResourceNotFoundException(String.format(ErrorCodes.SHELTER_NOT_FOUND_ERROR_CODE, shelterId));
         }
         if (!ShelterStatusEnum.ACTIVE.equals(shelter.getStatus())) {
-            throw new ResourceNotFoundException(ErrorCodes.SHELTER_NOT_IN_ACTIVE_STATUS);
+            throw new ResourceNotFoundException(String.format(ErrorCodes.SHELTER_NOT_IN_ACTIVE_STATUS, shelterId));
         }
         return shelter;
 

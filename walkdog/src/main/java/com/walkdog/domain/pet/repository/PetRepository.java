@@ -10,8 +10,7 @@ import java.util.List;
 
 public interface PetRepository extends JpaRepository<PetEntity, Long> {
 
-    @Query(value = "SELECT * FROM pet WHERE p.shelter_id = :shelterId AND p.status NOT IN (:notAllowedStatuses)",
+    @Query(value = "SELECT * FROM pet p WHERE p.shelter_id = :shelterId AND p.status NOT IN (:notAllowedStatuses)",
             nativeQuery = true)
     List<PetEntity> findAllByShelterIdAndStatusNotIn(@Param("shelterId") Long shelterId, @Param("notAllowedStatuses") List<PetStatusEnum> notAllowedStatuses);
-
 }
