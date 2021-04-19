@@ -61,6 +61,36 @@ VALUES (sequence_shelter_id.nextval,
 
 
 
+INSERT INTO pet (
+id, type, name, sex, race_type, birth_year, birth_month, weight, admittance_date, description, found_place, shelter_id, status, created_by, created_at
+)
+VALUES (
+  sequence_pet_id.nextval, 'DOG', '50 Cent', 'M', 'Maltańczyk', 2021, 4, 1.0, CURRENT_DATE, 'Malusieńki maltanczyk czeka na dobrego właściciela', 'W lesie', 1, 'READY_TO_ADOPTION', 'admin', CURRENT_DATE
+);
+
+INSERT INTO pet (
+id, type, name, sex, race_type, birth_year, birth_month, weight, admittance_date, description, found_place, shelter_id, status, created_by, created_at
+)
+VALUES (
+  sequence_pet_id.nextval, 'DOG', 'Paulinka', 'F', 'Bokser', 2020, 12, 18.1, CURRENT_DATE, 'Bardzo żwywiołowy pies szuka właściela', 'Przy drodze', 1, 'READY_TO_ADOPTION', 'admin', CURRENT_DATE
+);
+
+INSERT INTO pet (
+id, type, name, sex, race_type, birth_year, birth_month, weight, admittance_date, description, found_place, shelter_id, status, created_by, created_at
+)
+VALUES (
+  sequence_pet_id.nextval, 'DOG', '50 Cent', 'M', 'Maltańczyk', 2021, 4, 1.0, CURRENT_DATE, 'Malusieńki maltanczyk czeka na dobrego właściciela', 'W lesie', 2, 'READY_TO_ADOPTION', 'admin', CURRENT_DATE
+);
+
+INSERT INTO pet (
+id, type, name, sex, race_type, birth_year, birth_month, weight, admittance_date, description, found_place, shelter_id, status, created_by, created_at
+)
+VALUES (
+  sequence_pet_id.nextval, 'DOG', 'Paulinka', 'F', 'Bokser', 2020, 12, 18.1, CURRENT_DATE, 'Bardzo żwywiołowy pies szuka właściela', 'Przy drodze', 2, 'READY_TO_ADOPTION', 'admin', CURRENT_DATE
+);
+
+
+
 
 
 
