@@ -29,7 +29,7 @@ public class PetController {
     }
 
     @DeleteMapping(path = "/{id}")
-    public PetDto deletePet(@PathVariable Long id) {
+    public PetDto deletePet(@PathVariable Long id) throws ResourceNotFoundException {
         return petService.deletePet(id);
     }
 }

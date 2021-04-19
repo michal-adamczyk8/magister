@@ -71,12 +71,12 @@ public class ShelterService extends BaseService<ShelterDto, ShelterEntity> {
     }
 
     public ShelterDto getActiveShelterById(Long shelterId) throws ResourceNotFoundException {
-        ShelterDto shelter =  mapToDto(shelterRepository.findById(shelterId).orElse(null));
+        ShelterDto shelter =  mapToDto(shelterRepository.findById(shelterId).orElse (null));
         if (Objects.isNull(shelter)) {
             throw new ResourceNotFoundException(String.format(ErrorCodes.SHELTER_NOT_FOUND_ERROR_CODE, shelterId));
         }
         if (!ShelterStatusEnum.ACTIVE.equals(shelter.getStatus())) {
-            throw new ResourceNotFoundException(String.format(ErrorCodes.SHELTER_NOT_IN_ACTIVE_STATUS, shelterId));
+            throw new ResourceNotFoundException(String.format(ErrorCodes.SHELTER_NOT_IN_ACTIVE_STATUS_ERROR_CODE, shelterId));
         }
         return shelter;
 

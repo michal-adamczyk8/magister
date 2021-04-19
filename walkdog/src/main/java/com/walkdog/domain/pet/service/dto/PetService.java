@@ -1,6 +1,7 @@
 package com.walkdog.domain.pet.service.dto;
 
 import com.walkdog.common.abstracts.BaseService;
+import com.walkdog.common.codes.ErrorCodes;
 import com.walkdog.common.enums.PetSexEnum;
 import com.walkdog.common.enums.PetStatusEnum;
 import com.walkdog.common.enums.PetTypeEnum;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -52,8 +54,11 @@ public class PetService extends BaseService<PetDto, PetEntity> {
         return mapToDto(petRepository.save(mapToEntity(newPet)));
     }
 
-    public PetDto deletePet(Long petId) {
-        PetDto petDto = mapToDto(petRepository.findById(petId).orElseGet(null));
+    public PetDto deletePet(Long petId) throws ResourceNotFoundException {
+        PetDto petDto = mapToDto(petRepository.findById(petId).orElse(null));
+        if (Objects.isNull(petDto)) {
+            throw new ResourceNotFoundException(String.format(ErrorCodes.PET_NOT_FOUND_ERROR_CODE, petId));
+        }
         petDto.setStatus(PetStatusEnum.DELETED);
         petDto.setModifiedBy("admin");
         petDto.setModifiedAt(LocalDate.now());
