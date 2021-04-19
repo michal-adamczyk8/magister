@@ -1,5 +1,44 @@
-<div class="row">
-    <div class="col-xs-12">
-        {{ shelter.shelterName }}
+<div class="detail-section">
+        <div class="container-fluid">
+    
+            <img src="{{ shelter.imagePath }}" class="detail-img">
+    
+            <h3>{{ shelter.shelterName }}</h3>
+
+            <div class="row">
+                <b>Numer kontaktowy:</b> {{  shelter.phoneNumber }}
+            </div>
+
+            <div class="row">
+                    <b>Email:</b> {{ shelter.email }}
+            </div>            
+            <div class="row">
+                    <b>NIP:</b> {{ shelter.nip }}
+            </div>
+            <div class="row">
+                    <b>REGON:</b> {{  shelter.regon }}
+            </div>
+            
+            <div class="row">
+                    <b>KRS:</b> {{  shelter.krs }}
+            </div>
+
+            <div class="row">
+                <div class="col-xs-1">
+                    <button class="btn btn-toolbar" routerLink="/shelters">Cofnij</button>
+                </div>
+
+                <div class="col-xs-1">
+                        <button class="btn btn-danger" routerLink="/shelters">Usuń</button>
+                    </div>
+            </div>
+        
+            <!-- <button (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>
+    
+            <hr>
+            <h4>Description</h4>
+            <p>{{ product.description }}</p>
+    
+            <a routerLink="/products" class="mt-5">Back to Product List</a> -->
+        </div>
     </div>
-</div>

@@ -27,6 +27,7 @@ export class ShelterEditComponent implements OnInit {
             return;
         }
         const newShelter = new Shelter(
+            null,
             shelterForm.value.name,
             shelterForm.value.phoneNumber,
             shelterForm.value.email,

@@ -17,8 +17,8 @@ public class ShelterAddressEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_shelter_address_id")
     @SequenceGenerator(name="sequence_shelter_address_id", sequenceName = "sequence_shelter_address_id", allocationSize = 1)
-    @Column(name = "shelter_address_id")
-    private Long shelterAddressId;
+    @Column(name = "id")
+    private Long id;
 
     @Column(name = "street_name")
     private String streetName;

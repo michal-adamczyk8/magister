@@ -19,13 +19,14 @@ public class ShelterController {
     private final ShelterService shelterService;
 
     @GetMapping(path = "/all")
-    public List<ShelterDto> getAllShelters() {
+    public List<ShelterDto> getAllActiveShelters() {
         return shelterService.getAllShelters();
     }
 
     @PostMapping
-    public String createNewShelter(@RequestBody CreateShelterRequest request) {
-        ShelterDto shelterDto = shelterService.addNewShelter(request);
+    public String createNewShelter(@RequestBody CreateShelterRequest createShelterRequest) {
+        ShelterDto shelterDto = shelterService.addNewShelter(createShelterRequest);
+        //TODO: sprawdzić czemu dałem toString
         return shelterDto.toString();
     }
 

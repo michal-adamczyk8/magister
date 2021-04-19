@@ -25,4 +25,10 @@ export class ShelterService {
     getAllShelters() {
         return this.httpClient.get<Shelter[]>('http://localhost:8080/shelter/all');
     }
+
+    deleteShelter(shelter: Shelter) {
+        const httpUrl = 'http://localhost:8080/shelter/' +  shelter.shelterId;
+        console.log(httpUrl) 
+        return this.httpClient.delete<Shelter>(httpUrl);
+    }
 }

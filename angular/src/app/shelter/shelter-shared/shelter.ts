@@ -1,5 +1,6 @@
 export class Shelter {
     constructor(
+        public shelterId: number,
         public shelterName: string,
         public phoneNumber: string,
         public email: string,

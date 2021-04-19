@@ -5,9 +5,10 @@ import com.walkdog.common.enums.ShelterStatusEnum;
 import javax.persistence.AttributeConverter;
 
 public class ShelterStatusAttributeConverter implements AttributeConverter<ShelterStatusEnum, String> {
+
     @Override
     public String convertToDatabaseColumn(ShelterStatusEnum shelterStatusEnum) {
-        return shelterStatusEnum.name();
+        return shelterStatusEnum.getStatusName();
     }
 
     @Override

@@ -10,12 +10,12 @@ import java.time.LocalDate;
 
 
 @Data
-@NoArgsConstructor
 @Builder
+@NoArgsConstructor
 @AllArgsConstructor
 public class ShelterDto {
-    private Long shelterId;
-    private String shelterName;
+    private Long id;
+    private String name;
     private String phoneNumber;
     private String email;
     private String nip;

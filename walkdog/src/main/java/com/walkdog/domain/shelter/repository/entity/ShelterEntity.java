@@ -2,12 +2,14 @@ package com.walkdog.domain.shelter.repository.entity;
 
 import com.walkdog.common.enums.ShelterStatusEnum;
 import com.walkdog.common.enums.converters.ShelterStatusAttributeConverter;
+import com.walkdog.domain.pet.repository.entity.PetEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity(name = "shelter")
 @AllArgsConstructor
@@ -19,11 +21,11 @@ public class ShelterEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_shelter_id")
     @SequenceGenerator(name="sequence_shelter_id", sequenceName = "sequence_shelter_id", allocationSize = 1)
-    @Column(name = "shelter_id")
-    private Long shelterId;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(name = "shelter_name")
-    private String shelterName;
+    @Column(name = "name")
+    private String name;
 
     @Column(name = "phone_number")
     private String phoneNumber;
@@ -74,6 +76,9 @@ public class ShelterEntity {
     @Column(name = "status")
     @Convert(converter = ShelterStatusAttributeConverter.class)
     private ShelterStatusEnum status;
+
+    @OneToMany(mappedBy = "shelter" )
+    private Set<PetEntity> pets;
 
     @Column(name = "created_by")
     private String createdBy;

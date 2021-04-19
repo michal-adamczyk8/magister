@@ -1,12 +1,12 @@
-INSERT INTO shelter_address (shelter_address_id, city, street_name, house_number, zip_code, created_by, created_at)
+INSERT INTO shelter_address (id, city, street_name, house_number, zip_code, created_by, created_at)
 VALUES (sequence_shelter_address_id.nextval, 'Warszawa', 'ul. Paluch', '2', '01-910', 'admin', CURRENT_DATE);
 
 
-INSERT INTO shelter_address (shelter_address_id, city, street_name, house_number, zip_code, created_by, created_at)
+INSERT INTO shelter_address (id, city, street_name, house_number, zip_code, created_by, created_at)
 VALUES (sequence_shelter_address_id.nextval, 'Kielce', 'ul. Sciegiennego', '203', '25-098', 'admin', CURRENT_DATE);
 
-INSERT INTO shelter(shelter_id,
-                    shelter_name,
+INSERT INTO shelter(id,
+                    name,
                     nip,
                     regon,
                     email,
@@ -32,8 +32,8 @@ VALUES (sequence_shelter_id.nextval,
         'admin',
         CURRENT_DATE);
 
-INSERT INTO shelter(shelter_id,
-                    shelter_name,
+INSERT INTO shelter(id,
+                    name,
                     nip,
                     regon,
                     email,

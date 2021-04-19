@@ -4,11 +4,12 @@
 
 CREATE SEQUENCE sequence_shelter_id START WITH 1 INCREMENT BY 1 MAXVALUE 99999;
 CREATE SEQUENCE sequence_shelter_address_id START WITH 1 INCREMENT BY 1 MAXVALUE 99999;
+CREATE SEQUENCE sequence_spet_id START WITH 1 INCREMENT BY 1 MAXVALUE 99999;
 
 CREATE TABLE shelter
 (
-    shelter_id   NUMBER        NOT NULL AUTO_INCREMENT,
-    shelter_name VARCHAR(255)  NOT NULL,
+    id           NUMBER        NOT NULL AUTO_INCREMENT,
+    name         VARCHAR(255)  NOT NULL,
     phone_number VARCHAR(50)   NOT NULL,
     email        VARCHAR(250)  NOT NULL,
     nip          VARCHAR(10)   NOT NULL,
@@ -29,12 +30,12 @@ CREATE TABLE shelter
     created_at   DATE          NOT NULL,
     modified_by  VARCHAR(255),
     modified_at  DATE,
-    PRIMARY KEY (shelter_id)
+    PRIMARY KEY (id)
 );
 
 CREATE TABLE shelter_address
 (
-    shelter_address_id NUMBER       NOT NULL AUTO_INCREMENT,
+    id                 NUMBER       NOT NULL AUTO_INCREMENT,
     street_name        VARCHAR(255) NOT NULL,
     house_number       VARCHAR(5)   NOT NULL,
     flat_number        VARCHAR(5),
@@ -44,9 +45,35 @@ CREATE TABLE shelter_address
     created_at         DATE         NOT NULL,
     modified_by        VARCHAR(255),
     modified_at        DATE,
-    PRIMARY KEY (shelter_address_id)
+    PRIMARY KEY (id)
 );
 
 
 ALTER TABLE shelter
-    ADD FOREIGN KEY (shelter_id) REFERENCES shelter (shelter_id);
+    ADD FOREIGN KEY (address_id) REFERENCES shelter_address (id);
+
+
+CREATE TABLE pet
+(
+    id                NUMBER        NOT NULL AUTO_INCREMENT,
+    type              VARCHAR(5)    NOT NULL,
+    name              VARCHAR(255)  NOT NULL,
+    sex               VARCHAR(10)   NOT NULL,
+    race_type         VARCHAR(100),
+    birth_year        INT,
+    birth_month       INT,
+    weight            DECIMAL       NOT NULL,
+    admittance_date   DATE          NOT NULL,
+    description       VARCHAR(1000),
+    found_place       VARCHAR(255),
+    shelter_id        INT           NOT NULL,
+    status            VARCHAR(50)   NOT NULL,
+    created_by        VARCHAR(255)  NOT NULL,
+    created_at        DATE          NOT NULL,
+    modified_by       VARCHAR(255),
+    modified_at       DATE,
+    PRIMARY KEY (id)
+);
+
+ALTER TABLE pet
+    ADD FOREIGN KEY(shelter_id) REFERENCES shelter (id);

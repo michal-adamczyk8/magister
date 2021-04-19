@@ -1,11 +1,14 @@
 package com.walkdog.common.enums;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import java.util.stream.Stream;
 
 @RequiredArgsConstructor
+@Getter
 public enum ShelterStatusEnum {
+
     ACTIVE("ACTIVE"), SUSPENDED("SUSPENDED"), DELETED("SUSPENDED");
 
     private final String statusName;
