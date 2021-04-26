@@ -1,0 +1,160 @@
+<hr>
+<div class="row">
+    <div class="col-md-8">
+        <form #form="ngForm" (ngSubmit)="onSubmit(form)" [formGroup]="petForm">
+            <div class="row">
+                <div class="col-xs-1">
+                    <button class="btn btn-toolbar">
+                        Cofnij
+                    </button>
+                </div>
+
+                <div class="col-xs-1">
+                    <div class="form-group">
+                        <button class="btn btn-success" type="submit">Dodaj</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imię -->
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label for="name">Imię zwierzaka: </label>
+                        <input class="form-control" formControlName="name" id="name" placeholder="Imię..." type="text">
+                    </div>
+                </div>
+            </div>
+            <!-- Rasa -->
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label for="raceType">Rasa zwierzaka: </label>
+                        <input class="form-control" formControlName="raceType" id="raceType" placeholder="Rasa..." type="text">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typ -->
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label for="type">Typ zwierzaka: </label>
+                        <select class="form-control" id="type" formControlName="type">
+                            <option [ngValue]="null" disabled>Wybierz typ zwierzaka</option>
+                            <option *ngFor="let petType of petTypes">
+                                {{petType}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Płeć zwierzaka -->
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label for="sex">Płeć zwierzaka: </label>
+                        <select class="form-control" id="sex" formControlName="sex">
+                            <option [ngValue]="null" disabled>Wybierz płeć zwierzaka</option>
+                            <option *ngFor="let petSex of petSexes">
+                                {{petSex}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Rok urodzenia -->
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label for="birthYear">Rok urodzenia: </label>
+                        <input class="form-control" formControlName="birthYear" id="birthYear" placeholder="Rok urodzenia..."
+                            type="number">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Miesiąc urodzenia -->
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label for="birthMonth">Miesiąc urodzenia: </label>
+                        <input class="form-control" formControlName="birthMonth" id="birthMonth" placeholder="Miesiąc urodzenia..."
+                            type="number">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Waga -->
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label for="weight">Waga w kg: </label>
+                        <input class="form-control" formControlName="weight" id="weight" placeholder="Waga..." type="number">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data przyjęcia -->
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label for="admittanceDate">Data przyjęcia: </label>
+                        <input class="form-control" formControlName="admittanceDate" id="admittanceDate" placeholder="Data przyjęcia..."
+                            type="date">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Miejsce znalezienia -->
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label for="foundPlace">Miejsce znalezienia: </label>
+                        <input class="form-control" formControlName="foundPlace" id="foundPlace" placeholder="Miejsce znalezienia..."
+                            type="date">
+                    </div>
+                </div>
+            </div>
+            <!-- Status -->
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label for="status">Status zwierzaka: </label>
+                        <select class="form-control" id="status" formControlName="status">
+                            <option [ngValue]="null" disabled>Wybierz status zwierzaka</option>
+                            <option *ngFor="let petStatus of petStatuses">
+                                {{petStatus}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- Opis -->
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="form-group">
+                        <label for="description">Opis zwierzaka: </label>
+                        <textarea class="form-control" formControlName="description" id="description" placeholder="Opis..."></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1">
+                    <button class="btn btn-toolbar">
+                        Cofnij
+                    </button>
+                </div>
+
+                <div class="col-xs-1">
+                    <div class="form-group">
+                        <button class="btn btn-success" type="submit">Dodaj</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<hr>

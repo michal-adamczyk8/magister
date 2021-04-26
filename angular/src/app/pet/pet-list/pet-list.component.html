@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-xs-12">
+        <button class="btn btn-success" (click)="onAddPet()">Dodaj zwierzaka</button>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-8">
+            <div *ngFor="let pet of pets">
+                <a class="list-group-item clearfix" style="cursor: pointer;">
+                    <div class="pull-left">
+                        <h4 class="list-group-item-heading">{{ pet.name }}</h4>
+                        <p class="list-group-item-text">{{ pet.raceType }} </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

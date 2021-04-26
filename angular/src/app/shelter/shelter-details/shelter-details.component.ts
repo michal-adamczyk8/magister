@@ -18,8 +18,12 @@ export class ShelterDetailsComponent implements OnInit {
         this.shelter = history.state.data;
     }
 
+    onPetsOfShelter() {
+        const httpUrl = 'shelter/' + this.shelter.id + '/pets' 
+        this.router.navigate([httpUrl]);
+    }
+
     onDelete() {
-        console.log(this.shelter.shelterName)
         this.shelterService.deleteShelter(this.shelter);
         this.router.navigate(['/shelters'])
     }

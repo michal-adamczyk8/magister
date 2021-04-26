@@ -6,7 +6,7 @@ import {Subject} from 'rxjs';
 @Injectable({
     providedIn: 'root',
 })
-export class ShelterService {
+export class    ShelterService {
     sheltersChanged = new Subject<Shelter[]>();
     private shelters: Shelter[] = [];
 
@@ -14,7 +14,6 @@ export class ShelterService {
     }
 
     addShelter(newShelter: Shelter) {
-        console.log('submitting service -enter')
         const headers = {'content-type': 'application/json'};
         const body = JSON.stringify(newShelter);
         this.shelters.push(newShelter);
@@ -27,8 +26,7 @@ export class ShelterService {
     }
 
     deleteShelter(shelter: Shelter) {
-        const httpUrl = 'http://localhost:8080/shelter/' +  shelter.shelterId;
-        console.log(httpUrl) 
+        const httpUrl = 'http://localhost:8080/shelter/' +  shelter.id;
         return this.httpClient.delete<Shelter>(httpUrl);
     }
 }

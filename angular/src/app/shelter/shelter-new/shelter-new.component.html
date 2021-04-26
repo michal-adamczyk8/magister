@@ -2,17 +2,17 @@
 <div class="row">
     <div class="col-md-8">
         <form #form="ngForm" (ngSubmit)="onSubmit(form)" [formGroup]="shelterForm">
-                <div class="row">
-                        <div class="col-xs-1">
-                            <button class="btn btn-toolbar" routerLink="/shelters">Cofnij</button>
-                        </div>
-                    
-                        <div class="col-xs-1">
-                            <div class="form-group">
-                                <button class="btn btn-success" type="submit">Dodaj</button>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-xs-1">
+                    <button class="btn btn-toolbar" routerLink="/shelters">Cofnij</button>
+                </div>
+
+                <div class="col-xs-1">
+                    <div class="form-group">
+                        <button class="btn btn-success" type="submit">Dodaj</button>
                     </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-xs-12">
                     <div class="form-group">
@@ -45,7 +45,7 @@
                             <div *ngIf="phoneNumber.errors.minlength">
                                 Numer telefonu jest za krótki
                             </div>
-                        </div>  
+                        </div>
                         <!-- koniec walidacji -->
                     </div>
                 </div>
@@ -137,10 +137,10 @@
                     <input class="form-control" formControlName="houseNumber" id="houseNumber" name="houseNumber" type="text">
                     <!-- walidacja -->
                     <div *ngIf="houseNumber.invalid && (houseNumber.dirty || houseNumber.touched)" class="alert alert-danger mt-1">
-                            <div *ngIf="houseNumber.errors.notOnlyWhitespace">
-                                Numer domu jest wmagany
-                            </div>
+                        <div *ngIf="houseNumber.errors.notOnlyWhitespace">
+                            Numer domu jest wmagany
                         </div>
+                    </div>
                     <!-- koniec walidacji -->
                 </div>
                 <div class="col-xs-3">
@@ -283,16 +283,16 @@
             </div>
             <hr>
             <div class="row">
-                    <div class="col-xs-1">
-                        <button class="btn btn-toolbar" routerLink="/shelters">Cofnij</button>
-                    </div>
-                
-                    <div class="col-xs-1">
-                        <div class="form-group">
-                            <button class="btn btn-success" type="submit">Dodaj</button>
-                        </div>
+                <div class="col-xs-1">
+                    <button class="btn btn-toolbar" routerLink="/shelters">Cofnij</button>
+                </div>
+
+                <div class="col-xs-1">
+                    <div class="form-group">
+                        <button class="btn btn-success" type="submit">Dodaj</button>
                     </div>
                 </div>
+            </div>
         </form>
     </div>
 </div>

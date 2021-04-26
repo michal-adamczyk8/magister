@@ -12,16 +12,19 @@ import {ShelterDetailsComponent} from './shelter/shelter-details/shelter-details
 import {ShelterItemComponent} from './shelter/shelter-list/shelter-item/shelter-item.component';
 import {ShelterService} from './shelter/shelter-shared/shelter.service';
 import {RouterModule, Routes} from '@angular/router';
+import { PetListComponent } from './pet/pet-list/pet-list.component';
+import { PetDetailsComponent } from './pet/pet-details/pet-details.component';
+import { PetNewComponent } from './pet/pet-new/pet-new.component';
 
 
 const appRoutes: Routes = [
     {path: '', redirectTo: '/shelters', pathMatch: 'full'},
-    {
-        path: 'shelters',
-        component: ShelterListComponent,
-    },
+    {path: 'shelters', component: ShelterListComponent,},
     {path: 'shelters/new', component: ShelterEditComponent},
-    {path: 'shelter/:shelterName', component: ShelterDetailsComponent}
+    {path: 'shelter/:shelterName', component: ShelterDetailsComponent},
+    {path: 'shelter/:shelterId/pets/new', component: PetNewComponent},
+    {path: 'shelter/:shelterId/pets/:petId', component: PetDetailsComponent},
+    {path: 'shelter/:shelterId/pets', component: PetListComponent}
 ];
 
 @NgModule({
@@ -32,7 +35,10 @@ const appRoutes: Routes = [
         ShelterComponent,
         ShelterListComponent,
         ShelterDetailsComponent,
-        ShelterItemComponent
+        ShelterItemComponent,
+        PetListComponent,
+        PetDetailsComponent,
+        PetNewComponent,
     ],
     imports: [
         BrowserModule,

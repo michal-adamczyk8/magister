@@ -29,7 +29,13 @@
                 </div>
 
                 <div class="col-xs-1">
-                        <button class="btn btn-danger" routerLink="/shelters">Usuń</button>
+                        <button class="btn btn-danger" (click)="onDelete()">Usuń</button>
+                    </div>
+            </div>
+
+            <div class="row">
+                    <div class="xol-xs-1">
+                        <button class="btn btn-toolbar" (click)="onPetsOfShelter()">Zobacz zwierzaki</button>
                     </div>
             </div>
         

@@ -18,6 +18,6 @@ export class ShelterItemComponent implements OnInit {
     }
 
     onNavToDetailsComponent(shelter: Shelter) {
-        this.appRouter.navigate(['shelter', shelter.shelterName], {state: {data: shelter}});
+        this.appRouter.navigate(['shelter', shelter.name], {state: {data: shelter}});
     }
 }
