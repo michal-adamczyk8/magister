@@ -7,7 +7,6 @@ import com.walkdog.domain.pet.service.dto.PetDto;
 import com.walkdog.domain.pet.service.dto.PetService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

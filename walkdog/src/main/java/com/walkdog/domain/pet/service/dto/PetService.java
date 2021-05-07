@@ -35,8 +35,8 @@ public class PetService extends BaseService<PetDto, PetEntity> {
     public PetDto addNewPet(CreatePetRequest request) throws ResourceNotFoundException {
         PetDto newPet = PetDto.builder()
                 .name(request.get_name())
-                .type(PetTypeEnum.valueOf(request.get_type()))
-                .sex(PetSexEnum.valueOf(request.get_sex()))
+                .type(PetTypeEnum.valueOfByValue(request.get_type()))
+                .sex(PetSexEnum.valueOfByValue(request.get_sex()))
                 .raceType(request.get_raceType())
                 .birthYear(request.get_birthYear())
                 .birthMonth(request.get_birthMonth())

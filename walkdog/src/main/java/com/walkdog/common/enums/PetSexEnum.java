@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 @Getter
 public enum PetSexEnum {
 
-    M("MALE"), F("FEMALE");
+    DOG_MALE("Pies"), DOG_FEMALE("Suka"), CAT_MALE("Kot"), CAT_FEMALE("Kocica");
 
     private final String sex;
 

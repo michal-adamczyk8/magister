@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 @Getter
 public enum PetTypeEnum {
 
-    DOG("DOG"), CAT("CAT");
+    DOG("Pies"), CAT("Kot");
 
     private final String petType;
 
