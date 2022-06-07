@@ -130,9 +130,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="25" />
-    <option name="width" value="1440" />
-    <option name="height" value="875" />
+    <option name="x" value="1440" />
+    <option name="y" value="-152" />
+    <option name="width" value="1920" />
+    <option name="height" value="1052" />
   </component>
   <component name="ProjectId" id="1lK8Yetzg52CpoTpfPZZnVqfr95" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
