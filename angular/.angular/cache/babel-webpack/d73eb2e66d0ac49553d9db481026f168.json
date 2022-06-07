@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var WalkStatus = /*#__PURE__*/(() => {\n  (function (WalkStatus) {\n    WalkStatus[\"CREATED\"] = \"Utworzone\";\n    WalkStatus[\"CANCELED\"] = \"Anulowane\";\n    WalkStatus[\"CONFIRMED\"] = \"Potwierdzone\";\n  })(WalkStatus || (WalkStatus = {}));\n\n  return WalkStatus;\n})();","map":null,"metadata":{},"sourceType":"module"}

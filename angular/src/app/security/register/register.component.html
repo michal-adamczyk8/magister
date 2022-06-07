@@ -1,0 +1,131 @@
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+<div class="login-container animated fadeInDown bootstrap snippets bootdeys">
+  <div class="loginbox bg-white">
+    <div class="loginbox-title">Rejestracja</div>
+    <form
+      #loginForm="ngForm"
+      (ngSubmit)="onRegister(loginForm.value)"
+      [mustMatch]="['password', 'confirmPassword']"
+    >
+      <div class="loginbox-textbox">
+        <input
+          type="text"
+          name="firstName"
+          class="form-control"
+          placeholder="Imię"
+          ngModel
+          #firstnameInput="ngModel"
+          required
+        />
+        <span
+          style="color:red;"
+          *ngIf="firstnameInput.invalid && firstnameInput.touched"
+          >Wprowadź swoje imię</span
+        >
+      </div>
+      <div class="loginbox-textbox">
+        <input
+          type="text"
+          name="lastName"
+          class="form-control"
+          placeholder="Nazwisko"
+          ngModel
+          #lastnameInput="ngModel"
+          required
+        />
+        <span
+          style="color:red;"
+          *ngIf="lastnameInput.invalid && lastnameInput.touched"
+          >Wprowadź swoje nazwisko</span
+        >
+      </div>
+      <div class="loginbox-textbox">
+        <input
+          type="text"
+          name="username"
+          class="form-control"
+          placeholder="Nazwa użytkownika"
+          ngModel
+          #usernameInput="ngModel"
+          required
+        />
+        <span
+          style="color:red;"
+          *ngIf="usernameInput.invalid && usernameInput.touched"
+          >Wprowadź swoją nazwę użytkownika</span
+        >
+      </div>
+
+      <div class="loginbox-textbox">
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          placeholder="Email"
+          ngModel
+          #emailInput="ngModel"
+          required
+        />
+        <span
+          class="help-block"
+          style="color:red;"
+          *ngIf="emailInput.invalid && emailInput.touched"
+        >
+          Wprowadź swój adres email.
+        </span>
+      </div>
+      <div class="loginbox-textbox">
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="Hasło"
+          ngModel
+          #passwordInput="ngModel"
+          required
+        />
+        <span
+          class="help-block"
+          style="color:red;"
+          *ngIf="passwordInput.invalid && passwordInput.touched"
+        >
+          Wprowadź hasło.
+        </span>
+      </div>
+      <div class="loginbox-textbox">
+        <input
+          type="password"
+          class="form-control"
+          name="confirmPassword"
+          placeholder="Potwierdź hasło"
+          ngModel
+          #confirmPasswordInput="ngModel"
+          required
+        />
+        <span
+          class="help-block"
+          style="color:red;"
+          *ngIf="confirmPasswordInput.invalid && confirmPasswordInput.touched"
+        >
+          Hasła się nie zgadzają.
+        </span>
+      </div>
+
+      <div class="loginbox-submit">
+        <button
+          type="submit"
+          [disabled]="loginForm.invalid || showLoading"
+          class="btn btn-primary btn-block"
+        >
+          <i *ngIf="showLoading" class="fas fa-spinner fa-spin"></i>&nbsp;&nbsp;
+          <span *ngIf="showLoading">Ładowanie...</span>
+          <span *ngIf="!showLoading">Zarejestruj się</span>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="logobox"></div>
+</div>

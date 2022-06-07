@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <a class="navbar-brand" href="#" data-abc="true">WalkDog</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li routerLinkActive="active" class="nav-item"> <a class="nav-link" routerLink="/shelters" data-abc="true">Schroniska</a> </li>
+            <li routerLinkActive="active" class="nav-item"> <a class="nav-link" routerLink="/pets" data-abc="true">Zwierzaki</a> </li>
+            <li routerLinkActive="active" class="nav-item"> <a class="nav-link" routerLink="/takers" data-abc="true">Opiekunowie</a> </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li *ngIf="isUserLoggedIn" routerLinkActive="active" class="nav-item"> <a class="nav-link" routerLink="/users" data-abc="true">Panel zarządzania</a> </li>
+            <li *ngIf="!isUserLoggedIn" routerLinkActive="active" class="nav-item"> <a class="nav-link" routerLink="/login" data-abc="true">Zaloguj</a> </li>
+            <li *ngIf="isUserLoggedIn" routerLinkActive="active" class="nav-item"> <a class="nav-link" (click) = "onLogout()" data-abc="true">Wyloguj</a> </li>
+        </ul>
+    </div>
+</nav>

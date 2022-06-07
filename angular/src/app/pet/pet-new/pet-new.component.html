@@ -1,0 +1,278 @@
+<div class="container">
+    <hr/>
+    <h1 class="text-primary">Dodawanie nowego zwierzaka</h1>
+
+    <div class="row">
+        <div class="col-md-8">
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)" [formGroup]="petForm">
+                <!-- Imię -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="name">Imię zwierzaka: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="name"
+                                    id="name"
+                                    placeholder="Imię..."
+                                    type="text"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="name.invalid && (name.dirty || name.touched)"
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="name.errors.notOnlyWhitespace">
+                                    Nazwa zwierzaka jest wymagana
+                                </div>
+                                <div *ngIf="name.errors.minlength">
+                                    Nazwa zwierzaka jest za krótka
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Rasa -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="raceType">Rasa zwierzaka: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="raceType"
+                                    id="raceType"
+                                    placeholder="Rasa..."
+                                    type="text"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typ -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="type">Typ zwierzaka: </label>
+                            <select class="form-control" id="type" formControlName="type">
+                                <option [ngValue]="null" disabled>Wybierz typ zwierzaka</option>
+                                <option *ngFor="let petType of petTypes">
+                                    {{ petType }}
+                                </option>
+                            </select>
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="type.invalid && (type.dirty || type.touched)"
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="type.errors.required">
+                                    Typ zwierzaka jest wymagany
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Płeć zwierzaka -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="sex">Płeć zwierzaka: </label>
+                            <select class="form-control" id="sex" formControlName="sex">
+                                <option [ngValue]="null" disabled
+                                >Wybierz płeć zwierzaka
+                                </option
+                                >
+                                <option *ngFor="let petSex of petSexes">
+                                    {{ petSex }}
+                                </option>
+                            </select>
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="sex.invalid && (sex.dirty || sex.touched)"
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="sex.errors.required">
+                                    Płeć zwierzaka jest wymagana
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rok urodzenia -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="birthYear">Rok urodzenia: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="birthYear"
+                                    id="birthYear"
+                                    placeholder="Rok urodzenia..."
+                                    type="number"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Miesiąc urodzenia -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="birthMonth">Miesiąc urodzenia: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="birthMonth"
+                                    id="birthMonth"
+                                    placeholder="Miesiąc urodzenia..."
+                                    type="number"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Waga -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="weight">Waga w kg: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="weight"
+                                    id="weight"
+                                    placeholder="Waga..."
+                                    type="number"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="weight.invalid && (weight.dirty || weight.touched)"
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="sex.errors.required">
+                                    Waga zwierzaka jest wymagana
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data przyjęcia -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="admittanceDate">Data przyjęcia: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="admittanceDate"
+                                    id="admittanceDate"
+                                    placeholder="Data przyjęcia..."
+                                    type="date"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="
+                  admittanceDate.invalid &&
+                  (admittanceDate.dirty || admittanceDate.touched)
+                "
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="admittanceDate.errors.required">
+                                    Data przyjęcia jest wymagana
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Miejsce znalezienia -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="foundPlace">Miejsce znalezienia: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="foundPlace"
+                                    id="foundPlace"
+                                    placeholder="Miejsce znalezienia..."
+                                    type="text"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <!-- Status -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="status">Status zwierzaka: </label>
+                            <select class="form-control" id="status" formControlName="status">
+                                <option [ngValue]="null" disabled
+                                >Wybierz status zwierzaka
+                                </option
+                                >
+                                <option *ngFor="let petStatus of petStatuses">
+                                    {{ petStatus }}
+                                </option>
+                            </select>
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="status.invalid && (status.dirty || status.touched)"
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="status.errors.required">
+                                    Status zwierzaka jest wymagany
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Opis -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="description">Opis: </label>
+                            <textarea
+                                    class="form-control"
+                                    formControlName="description"
+                                    id="description"
+                                    placeholder="Opis..."
+                            ></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- Opis -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="description">Zdjęcie: </label>
+                            <textarea
+                                    class="form-control"
+                                    formControlName="imageUrl"
+                                    id="imageUrl"
+                                    placeholder="Link do zdjęcia..."
+                            ></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <button class="btn btn-info" (click)="onGoBack()">
+                            Cofnij
+                        </button>
+                    </div>
+
+                    <div class="col-xs-1">
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Dodaj</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr/>
+</div>

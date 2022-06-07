@@ -1,0 +1,273 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'https://use.fontawesome.com/releases/v5.8.1/css/all.css';
+@import '~angular-notifier/styles';
+@import '~open-iconic/font/css/open-iconic-bootstrap.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body{margin-top:20px;}
+/* -------------------------------------------------------------- Box Product -------------------------------------------------------------- */
+.box-product-outer {
+    margin-bottom: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px
+}
+.box-product-outer:hover {
+    outline: 1px solid #aaa;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .175)
+}
+.tab-content .box-product-outer { margin-bottom: 0 }
+.box-product-slider-outer { padding: 10px }
+.box-product .img-wrapper {
+    position: relative;
+    overflow: hidden
+}
+.box-product .img-wrapper > :first-child {
+    position: relative;
+    display: block
+}
+.box-product .img-wrapper > a > img { width: 100% }
+.box-product .img-wrapper .tags {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    overflow: visible;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    vertical-align: inherit;
+    border-width: 0;
+    background-color: transparent;
+    direction: rtl
+}
+.box-product .img-wrapper .tags-left {
+    left: 0;
+	direction: ltr
+}
+.box-product .img-wrapper .tags > .label-tags {
+    display: table;
+    margin: 1px 0 0 0;
+    text-align: left;
+    opacity: .92;
+    filter: alpha(opacity=92);
+    direction: ltr
+}
+.box-product .img-wrapper .tags > .label-tags:hover {
+    opacity: 1;
+    filter: alpha(opacity=100)
+}
+.box-product .img-wrapper .tags > .label-tags a:hover { text-decoration: none }
+.box-product .img-wrapper > .option {
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: -30px;
+    left: 0;
+    width: auto;
+    height: 28px;
+    -webkit-transition: all .2s ease;
+         -o-transition: all .2s ease;
+            transition: all .2s ease;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgba(0, 0, 0, .55)
+}
+.box-product .img-wrapper .option > a {
+    font-size: 18px;
+    font-weight: normal;
+    display: inline-block;
+    padding: 0 4px;
+    color: #fff
+}
+.box-product .img-wrapper:hover > .option {
+    top: auto;
+    bottom: 0
+}
+.box-product h6 a { line-height: 1.4 }
+.product-sorting-bar { border: 1px solid #e5e5e5 }
+/* -------------------------------------------------------------- End of Box Product -------------------------------------------------------------- */
+
+body{
+    background-color: #f8f9fa!important
+}
+.p-4 {
+    padding: 1.5rem!important;
+}
+.mb-0, .my-0 {
+    margin-bottom: 0!important;
+}
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}    
+
+/* user-dashboard-info-box */
+.user-dashboard-info-box .candidates-list .thumb {
+    margin-right: 20px;
+}
+.user-dashboard-info-box .candidates-list .thumb img {
+    width: 200px;
+    height: 200px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.user-dashboard-info-box .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.user-dashboard-info-box .candidates-list td {
+    vertical-align: middle;
+}
+
+.user-dashboard-info-box td li {
+    margin: 0 4px;
+}
+
+.user-dashboard-info-box .table thead th {
+    border-bottom: none;
+}
+
+.table.manage-candidates-top th {
+    border: 0;
+}
+
+.user-dashboard-info-box .candidate-list-favourite-time .candidate-list-favourite {
+    margin-bottom: 10px;
+}
+
+.table.manage-candidates-top {
+    min-width: 650px;
+}
+
+.user-dashboard-info-box .candidate-list-details ul {
+    color: #969696;
+}
+
+/* Candidate List */
+.candidate-list {
+    background: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 1px solid #eeeeee;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.candidate-list:hover {
+    -webkit-box-shadow: 0px 0px 34px 4px rgba(33, 37, 41, 0.06);
+    box-shadow: 0px 0px 34px 4px rgba(33, 37, 41, 0.06);
+    position: relative;
+    z-index: 99;
+}
+.candidate-list:hover a.candidate-list-favourite {
+    color: #e74c3c;
+    -webkit-box-shadow: -1px 4px 10px 1px rgba(24, 111, 201, 0.1);
+    box-shadow: -1px 4px 10px 1px rgba(24, 111, 201, 0.1);
+}
+
+.candidate-list .candidate-list-image {
+    margin-right: 25px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 80px;
+    flex: 0 0 80px;
+    border: none;
+}
+.candidate-list .candidate-list-image img {
+    width: 80px;
+    height: 80px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.candidate-list-title {
+    margin-bottom: 5px;
+}
+
+.candidate-list-details ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 0px;
+}
+.candidate-list-details ul li {
+    margin: 5px 10px 5px 0px;
+    font-size: 13px;
+}
+
+.candidate-list .candidate-list-favourite-time {
+    margin-left: auto;
+    text-align: center;
+    font-size: 13px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 90px;
+    flex: 0 0 90px;
+}
+.candidate-list .candidate-list-favourite-time span {
+    display: block;
+    margin: 0 auto;
+}
+.candidate-list .candidate-list-favourite-time .candidate-list-favourite {
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border: 1px solid #eeeeee;
+    border-radius: 100%;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #646f79;
+}
+.candidate-list .candidate-list-favourite-time .candidate-list-favourite:hover {
+    background: #ffffff;
+    color: #e74c3c;
+}
+
+.candidate-banner .candidate-list:hover {
+    position: inherit;
+    -webkit-box-shadow: inherit;
+    box-shadow: inherit;
+    z-index: inherit;
+}
+
+.bg-white {
+    background-color: #ffffff !important;
+}
+.p-4 {
+    padding: 1.5rem!important;
+}
+.mb-0, .my-0 {
+    margin-bottom: 0!important;
+}
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.user-dashboard-info-box .candidates-list .thumb {
+    margin-right: 20px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+ .mat-dialog-container {
+    padding: 0;
+  }
+

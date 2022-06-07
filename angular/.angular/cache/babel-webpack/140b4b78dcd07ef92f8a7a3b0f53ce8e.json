@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class AddWalkRequest {\n  constructor(dateTime, petId, userId, status) {\n    this.dateTime = dateTime;\n    this.petId = petId;\n    this.userId = userId;\n    this.status = status;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
