@@ -1,0 +1,268 @@
+<div class="container">
+    <div class="main-body">
+      <div class="row gutters-sm">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center">
+                <img
+                  [src]="shelter.imagePath"
+                  alt="taker"
+                  class="rounded-circle"
+                  width="150"
+                />
+                <div class="mt-3">
+                    <h4>{{ shelter.name }}</h4>
+                    <p class="text-secon gdary mb-1">
+                      {{ shelterAddress.city }} {{ shelterAddress.zipCode }}
+                    </p>
+                    <p class="text-muted font-size-sm">{{ getStreetAddress() }}</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <form
+            #form="ngForm"
+            (ngSubmit)="onSaveChanges(form)"
+            [formGroup]="shelterForm"
+          >
+              <div class="card mb-3">
+                <div class="card-body">
+                
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Nazwa</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input
+                        type="text"
+                        class="form-control"
+                        formControlName="name"
+                      />
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input
+                        type="text"
+                        class="form-control"
+                        formControlName="email"
+                      />
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Numer kontaktowy</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="phoneNumber"
+                        />
+                      </div>
+                    </div>
+                    <hr />
+                  <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Status</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <select
+                          name="takerStatus"
+                          class="form-control"
+                          formControlName="status"
+                        >
+                          <option *ngFor="let shelterStatus of shelterStatusEnumValues">
+                            {{ shelterStatus }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <hr />
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">NIP</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input
+                        type="text"
+                        class="form-control"
+                        formControlName="nip"
+                      />
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">REGON</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input
+                        type="text"
+                        class="form-control"
+                        formControlName="regon"
+                      />
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Opis</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input
+                        type="text"
+                        class="form-control"
+                        formControlName="description"
+                      />
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Ulica</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="streetName"
+                        />
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Numer domu</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="houseNumber"
+                        />
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Numer mieszkania</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="flatNumber"
+                        />
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Miasto</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="city"
+                        />
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Kod pocztowy</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="zipCode"
+                        />
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Strona</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="websiteUrl"
+                        />
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Facebook</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="facebookUrl"
+                        />
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Instagram</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="instagramUrl"
+                        />
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Twitter</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="twitterUrl"
+                        />
+                      </div>
+                    </div>
+                    <hr />
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <button class="btn btn-info" type="submit">
+                        Zapisz zmiany
+                      </button>
+                      <button class="btn btn-danger" (click)="onDelete()">
+                        Usuń
+                      </button>
+                      <button class="btn btn-primary" (click)="onGoBack()">
+                        Cofnij
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row gutters-sm"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

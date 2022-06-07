@@ -1,0 +1,164 @@
+<div class="container">
+    <hr/>
+    <h1 class="text-primary">Dodawanie nowego opiekuna</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <form
+                    #form="ngForm"
+                    (ngSubmit)="onSubmit(form)"
+                    [formGroup]="takerForm">
+                <!-- Imię -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="firstName">Imię: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="firstName"
+                                    id="firstName"
+                                    placeholder="Imię..."
+                                    type="text"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="
+                  firstName.invalid && (firstName.dirty || firstName.touched)
+                "
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="firstName.errors.notOnlyWhitespace">
+                                    Imię opiekuna jest wymagane
+                                </div>
+                                <div *ngIf="firstName.errors.minlength">
+                                    Imię opiekuna jest za krótkie
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+
+                <!-- Naziwsko -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group">
+                            <label for="lastName">Nazwisko: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="lastName"
+                                    id="lastName"
+                                    placeholder="Nazwisko..."
+                                    type="text"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)"
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="lastName.errors.notOnlyWhitespace">
+                                    Naziwsko opiekuna jest wymagane
+                                </div>
+                                <div *ngIf="lastName.errors.minlength">
+                                    Nazwisko opiekuna jest za krótkie
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+
+                <!-- Telefon -->
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="form-group customInput">
+                            <label for="phoneNumber">Telefon kontaktowy: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="phoneNumber"
+                                    id="phoneNumber"
+                                    name="phoneNumber"
+                                    placeholder="Tel. kontaktowy:..."
+                                    type="tel"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="
+                  phoneNumber.invalid &&
+                  (phoneNumber.dirty || phoneNumber.touched)
+                "
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="phoneNumber.errors.notOnlyWhitespace">
+                                    Numer telefonu jest wymagany
+                                </div>
+                                <div *ngIf="phoneNumber.errors.minlength">
+                                    Numer telefonu jest za krótkie
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+
+                <!-- Email -->
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="email">Adres email: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Adres email..."
+                                    type="email"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="email.invalid && (email.dirty || email.touched)"
+                                    class="alert alert-danger mt-1"
+                            >
+                                    Email jest wmagany
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+
+                <!-- Image url -->
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="imageUrl">Link do zdjęcia: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="imageUrl"
+                                    id="imageUrl"
+                                    name="imageUrl"
+                                    placeholder="Link do zdjęcia..."
+                                    type="text"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <button class="btn btn-info" (click)="onGoBack()">
+                            Cofnij
+                        </button>
+                    </div>
+                    <div class="col-xs-1">
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Dodaj</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <hr/>
+</div>

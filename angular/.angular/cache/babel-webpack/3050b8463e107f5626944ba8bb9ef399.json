@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var TakerStatusEnum = /*#__PURE__*/(() => {\n  (function (TakerStatusEnum) {\n    TakerStatusEnum[\"ACTIVE\"] = \"Aktywny\";\n    TakerStatusEnum[\"INACTIVE\"] = \"Nieaktywny\";\n  })(TakerStatusEnum || (TakerStatusEnum = {}));\n\n  return TakerStatusEnum;\n})();","map":null,"metadata":{},"sourceType":"module"}

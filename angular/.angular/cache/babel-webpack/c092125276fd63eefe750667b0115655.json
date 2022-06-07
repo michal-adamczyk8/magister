@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class NewTakerRequest {\n  constructor(firstName, lastName, email, phoneNumber, imageUrl, shelterId) {\n    this.firstName = firstName;\n    this.lastName = lastName;\n    this.email = email;\n    this.phoneNumber = phoneNumber;\n    this.imageUrl = imageUrl;\n    this.shelterId = shelterId;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

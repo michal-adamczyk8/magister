@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div class="dialog-content">
+  <p>{{ data.message }}</p>
+</div>
+<div class="dialog-footer">
+  <button
+    class="standard-button dialog-button"
+    mat-raised-button
+    [mat-dialog-close]="false"
+    cdkFocusInitial
+  >
+    Nie
+  </button>
+
+  <button mat-raised-button color="primary" [mat-dialog-close]="true">
+    Tak
+  </button>
+</div>

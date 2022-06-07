@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/walkdog_db
+    username: postgres
+    password: postgres
+
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: walk.doggg@gmail.com
+    password: xpedvxwwpfnzqwsm
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+jwt:
+  secret: oqweq@!!weu@jka%wf9h893en#qwdh982b82sywn
+server:
+  error:
+    whitelabel:
+      enabled: false
+  address: 0.0.0.0
+

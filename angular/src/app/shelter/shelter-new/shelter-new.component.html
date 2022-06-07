@@ -1,0 +1,477 @@
+<div class="container">
+    <hr/>
+    <h1 class="text-primary">Dodawanie nowego schroniska</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <form
+                    #form="ngForm"
+                    (ngSubmit)="onSubmit(form)"
+                    [formGroup]="shelterForm"
+            >
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group customInput">
+                            <label for="name">Nazwa: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="name"
+                                    id="name"
+                                    placeholder="Nazwa..."
+                                    type="text"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="name.invalid && (name.dirty || name.touched)"
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="name.errors.notOnlyWhitespace">
+                                    Nazwa schroniska jest wymagana
+                                </div>
+                                <div *ngIf="name.errors.minlength">
+                                    Nazwa schroniska jest za krótka
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="phoneNumber">Telefon kontaktowy: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="phoneNumber"
+                                    id="phoneNumber"
+                                    name="phoneNumber"
+                                    placeholder="Tel. kontaktowy:..."
+                                    type="tel"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="
+                  phoneNumber.invalid &&
+                  (phoneNumber.dirty || phoneNumber.touched)
+                "
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="phoneNumber.errors.notOnlyWhitespace">
+                                    Numer telefonu jest wymagany
+                                </div>
+                                <div *ngIf="phoneNumber.errors.minlength">
+                                    Numer telefonu jest za krótki
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="email">Adres email: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Adres email..."
+                                    type="email"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="email.invalid && (email.dirty || email.touched)"
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="name.errors.notOnlyWhitespace">
+                                    Email jest wmagany
+                                </div>
+
+                                <div *ngIf="email.errors.pattern">
+                                    Email jest niepoprawny
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="nip">NIP: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="nip"
+                                    id="nip"
+                                    name="nip"
+                                    placeholder="NIP..."
+                                    type="text"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="nip.invalid && (nip.dirty || nip.touched)"
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="nip.errors.notOnlyWhitespace">
+                                    NIP jest wmagany
+                                </div>
+                                <div *ngIf="nip.errors.exactLength">
+                                    NIP musi mieć 10 cyfr
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="regon">REGON: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="regon"
+                                    id="regon"
+                                    name="regon"
+                                    placeholder="REGON..."
+                                    type="text"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="regon.invalid && (regon.dirty || regon.touched)"
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="regon.errors.notOnlyWhitespace">
+                                    REGON jest wmagany
+                                </div>
+                                <div *ngIf="regon.errors.exactTwoLengths">
+                                    REGON musi mieć 9 albo 14 cyfr
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="krs">KRS: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="krs"
+                                    id="krs"
+                                    name="krs"
+                                    placeholder="KRS..."
+                                    type="text"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="city">Miejscowość: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="city"
+                                    id="city"
+                                    name="city"
+                                    placeholder="Miejscowość..."
+                                    type="text"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="city.invalid && (city.dirty || city.touched)"
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="city.errors.notOnlyWhitespace">
+                                    Nazwa miejscowości jest wymagana
+                                </div>
+                                <div *ngIf="city.errors.minlength">
+                                    Nazwa miejscowości jest za krótka
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="streetName">Ulica: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="streetName"
+                                    id="streetName"
+                                    name="streetName"
+                                    placeholder="Ulica..."
+                                    type="text"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="
+                  streetName.invalid && (streetName.dirty || streetName.touched)
+                "
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="streetName.errors.notOnlyWhitespace">
+                                    Nazwa ulicy jest wmagana
+                                </div>
+
+                                <div *ngIf="streetName.errors.minlength">
+                                    Nazwa ulicy jest za krótka
+                                </div>
+                            </div>
+                        </div>
+                        <!-- koniec walidacji -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <div class="form-group customInput">
+                            <label for="houseNumber">Numer domu: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="houseNumber"
+                                    id="houseNumber"
+                                    name="houseNumber"
+                                    type="text"
+                                    placeholder="Nr domu..."
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="
+                  houseNumber.invalid &&
+                  (houseNumber.dirty || houseNumber.touched)
+                "
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="houseNumber.errors.notOnlyWhitespace">
+                                    Numer domu jest wmagany
+                                </div>
+                            </div>
+                        </div>
+                        <!-- koniec walidacji -->
+                    </div>
+                    <div class="col-xs-3">
+                        <div class="form-group customInput">
+                            <label for="flatNumber">Numer mieszkania: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="flatNumber"
+                                    id="flatNumber"
+                                    name="flatNumber"
+                                    type="text"
+                                    placeholder="Nr mieszkania..."
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="form-group customInput">
+                            <label for="zipCode">Kod pocztowy: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="zipCode"
+                                    id="zipCode"
+                                    name="zipCode"
+                                    placeholder="Kod pocztowy..."
+                                    type="text"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)"
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="zipCode.errors.notOnlyWhitespace">
+                                    Kod pocztowy jest wymagany
+                                </div>
+                                <div *ngIf="zipCode.errors.pattern">
+                                    Kod pocztowy jest niepoprawny
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group customInput">
+                            <label for="description">Opis: </label>
+                            <textarea
+                                    class="form-control"
+                                    cols="8"
+                                    formControlName="description"
+                                    id="description"
+                                    name="description"
+                                    placeholder="Opis..."
+                            ></textarea>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="websiteUrl">Link do strony internetowej: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="websiteUrl"
+                                    id="websiteUrl"
+                                    name="websiteUrl"
+                                    placeholder="Strona internetowa..."
+                                    type="text"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="facebookUrl">Link do strony Facebook: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="facebookUrl"
+                                    id="facebookUrl"
+                                    name="facebookUrl"
+                                    placeholder="Profil Facebook..."
+                                    type="text"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="
+                  websiteUrl.invalid && (websiteUrl.dirty || websiteUrl.touched)
+                "
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="websiteUrl.errors.notOnlyWhitespace">
+                                    Link do strony interneowej jest wymagany
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="instagramUrl">Link do strony Instagram: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="instagramUrl"
+                                    id="instagramUrl"
+                                    name="instagramUrl"
+                                    placeholder="Profil Instagram..."
+                                    type="text"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="twitterUrl">Link do strony Twitter: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="twitterUrl"
+                                    id="twitterUrl"
+                                    name="twitterUrl"
+                                    placeholder="Profil Twitter..."
+                                    type="text"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group customInput">
+                            <label for="logo">Link do logo: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="logo"
+                                    id="logo"
+                                    name="logo"
+                                    type="text"
+                                    placeholder="Logo..."
+                            />
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group customInput">
+                            <label for="openingTime">Godziny otwarcia: </label>
+                            <textarea
+                                    class="form-control"
+                                    cols="8"
+                                    formControlName="openingTime"
+                                    id="openingTime"
+                                    name="openingTime"
+                                    placeholder="Godziny otwarcia..."
+                            ></textarea>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-10">
+                        <div class="form-group customInput">
+                            <label for="bankAccount">Numer rachunku bankowego: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="bankAccount"
+                                    id="bankAccount"
+                                    name="bankAccount"
+                                    placeholder="Nr rachunku bankowego..."
+                                    type="text"
+                            />
+                            <!-- walidacja -->
+                            <div
+                                    *ngIf="
+                  bankAccount.invalid &&
+                  (bankAccount.dirty || bankAccount.touched)
+                "
+                                    class="alert alert-danger mt-1"
+                            >
+                                <div *ngIf="bankAccount.errors.notOnlyWhitespace">
+                                    Numer rachunku bankowego jest wymagany
+                                </div>
+                            </div>
+                            <!-- koniec walidacji -->
+                        </div>
+                    </div>
+                    <div class="col-xs-10">
+                        <div class="form-group customInput">
+                            <label for="swiftCode">Kod SWIFT: </label>
+                            <input
+                                    class="form-control"
+                                    formControlName="swiftCode"
+                                    id="swiftCode"
+                                    name="swiftCode"
+                                    placeholder="Kod SWIFT..."
+                                    type="text"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="col-xs-1">
+                        <button class="btn btn-info" routerLink="/shelters">
+                            Cofnij
+                        </button>
+                    </div>
+
+                    <div class="col-xs-1">
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">Dodaj</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

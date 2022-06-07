@@ -1,0 +1,10 @@
+button {margin: 10px;}
+
+.customimg {
+    width: 200px;
+    height: 200px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 50%;
+}

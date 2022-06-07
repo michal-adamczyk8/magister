@@ -1,0 +1,298 @@
+<div class="container">
+  <!-- nav bar -->
+  <nav class="navbar navbar-expand-md breadcrumb">
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="nav nav-pills">
+        <a
+          [hidden]="!isAdminOrManager()"
+          class="nav-item nav-link active ml-1"
+          (click)="changeTitle('Users')"
+          data-toggle="tab"
+          href="#users"
+        >
+          Uytkownicy
+          <i class="fa fa-users"></i>
+        </a>
+        <a
+          class="nav-item nav-link move-right"
+          (click)="changeTitle('Profile')"
+          data-toggle="tab"
+          href="#profile"
+        >
+          Profil
+          <i class="fa fa-user"></i>
+        </a>
+        <a
+          class="nav-item nav-link move-right"
+          (click)="changeTitle('ManagerWalks')"
+          data-toggle="tab"
+          href="#managerWalks"
+        >
+          Spotkania
+          <i class="fa fa-calendar"></i>
+        </a>
+        <a
+          [hidden]="!isUser()"
+          class="nav-item nav-link move-right"
+          (click)="changeTitle('UserWalks')"
+          data-toggle="tab"
+          href="#userWalks"
+        >
+          Spotkania
+          <i class="fa fa-calendar"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- main content -->
+  <div class="tab-content mt-3" id="myTabContent">
+    <!-- user table -->
+    <div class="tab-pane fade show active" id="users">
+      <table class="table table-hover">
+        <thead class="table-borderless">
+          <tr class="text-center">
+            <th>ID uytkownika</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Nazwa uytkownika</th>
+            <th>Email</th>
+            <th>Rola</th>
+            <th>Schronisko</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let appUser of users">
+          <tr class="text-center">
+            <td>{{ appUser?.userId }}</td>
+            <td>{{ appUser?.firstName }}</td>
+            <td>{{ appUser?.lastName }}</td>
+            <td>{{ appUser?.username }}</td>
+            <td>{{ appUser?.role }}</td>
+            <td>{{ appUser?.email }}</td>
+            <td>{{ appUser?.shelterId }}</td>
+            <td>
+              <span [hidden]="appUser?.isActive" class="badge badge-success"
+                >Aktywny</span
+              >
+              <span [hidden]="!appUser?.isActive" class="badge badge-danger"
+                >Niekatywny</span
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-pane fade show active" id="managerWalks">
+      <table class="table table-hover">
+        <thead class="table-borderless">
+          <tr class="text-center">
+            <th>ID spotkania</th>
+            <th>Data</th>
+            <th>Zwierzę</th>
+            <th>Umawiający</th>
+            <th>Status</th>
+            <th>Data utworzenia</th>
+            <th>Akcje</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let walk of walks">
+          <tr class="text-center">
+            <td>{{ walk.id }}</td>
+            <td>{{ processDate(walk.dateTime) }}</td>
+            <td>{{ walk.pet.name }}</td>
+            <td>{{ walk.user.username }}</td>
+            <td>{{ walk.status }}</td>
+            <td>{{ walk.createdAt | date: "shortDate"}}</td>
+            <td class="">
+              <div class="btn-group">
+                <button
+                  class="btn btn-outline-info"
+                  (click)="onAcceptWalk(walk)"
+                >
+                  <i class="fas fa-check"></i>
+                </button>
+                <button
+                  class="btn btn-outline-danger"
+                  (click)="onCancelWalk(walk)"
+                >
+                  <i class="fas fa-ban"></i>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button
+      [hidden]="true"
+      type="button"
+      id="openUserInfo"
+      data-toggle="modal"
+      data-target="#viewUserModal"
+    ></button>
+    <button
+      [hidden]="true"
+      type="button"
+      id="openUserEdit"
+      data-toggle="modal"
+      data-target="#editUserModal"
+    ></button>
+
+    <!-- user profile -->
+    <div class="tab-pane fade" id="profile">
+      <div class="container">
+        <div class="row flex-lg-nowrap">
+          <div class="col">
+            <div class="row">
+              <div class="col mb-3">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="e-profile">
+                      <div class="row">
+                        <div
+                          class="col d-flex flex-column flex-sm-row justify-content-between mb-3"
+                        >
+                          <div class="text-center text-sm-left mb-2 mb-sm-0">
+                            <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">
+                              {{ user?.firstName }} {{ user?.lastName }}
+                            </h4>
+                            <p class="mb-0">{{ user?.username }}</p>
+                            <div
+                              *ngIf="user?.lastLoginDateDisplay !== null"
+                              class="text-muted"
+                            >
+                              <small
+                                >Ostatnie logownie:
+                                {{
+                                  user?.lastLoginDateDisplay | date: "medium"
+                                }}</small
+                              >
+                            </div>
+                          </div>
+                          <div class="text-center text-sm-right">
+                            <div class="text-muted">
+                              <small
+                                >Dołaczył
+                                {{
+                                  user?.joinedDate | date: "mediumDate"
+                                }}</small
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-content pt-3">
+                        <div class="tab-pane active">
+                          <form
+                            #profileUserForm="ngForm"
+                            
+                            class="form"
+                            novalidate
+                          >
+                            <div class="row">
+                              <div class="col">
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <label>Imię</label>
+                                      <input
+                                        type="text"
+                                        name="firstName"
+                                        required
+                                        [(ngModel)]="user.firstName"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <label>Nazwisko</label>
+                                      <input
+                                        type="text"
+                                        name="lastName"
+                                        required
+                                        [(ngModel)]="user.lastName"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <label>Nazwa uzytkownika</label>
+                                      <input
+                                        type="text"
+                                        name="username"
+                                        required
+                                        [(ngModel)]="user.username"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="form-group">
+                                      <label>Email</label>
+                                      <input
+                                        type="text"
+                                        name="email"
+                                        required
+                                        [(ngModel)]="user.email"
+                                        class="form-control"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col mb-3">
+                                    <div class="form-group">
+                                      <label>Rola</label
+                                      ><small [hidden]="isAdmin()"
+                                        >(read only)</small
+                                      >
+                                      <select
+                                        name="role"
+                                        required
+                                        [(ngModel)]="user.role"
+                                        class="form-control"
+                                      >
+                                        <option
+                                          [hidden]="!isAdmin()"
+                                          value="ROLE_USER"
+                                          >USER</option
+                                        >
+                                        <option
+                                          [hidden]="!isAdmin()"
+                                          value="ROLE_MANAGER"
+                                          >MANAGER</option
+                                        >
+                                        <option
+                                          [hidden]="!isAdmin()"
+                                          value="ROLE_SUPER_ADMIN"
+                                          >SUPER ADMIN</option
+                                        >
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

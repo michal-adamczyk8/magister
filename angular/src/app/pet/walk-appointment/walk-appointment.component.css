@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.e-calendar, .e-bigger.e-small .e-calendar {
+  max-width: 100%;
+  min-width: 100%;
+  padding: 0;
+}
+
+.e-calendar .e-content.e-month td, .e-bigger.e-small .e-calendar .e-content.e-month td {
+  height: 100px;
+  padding: 2px;
+  border: 1px solid #f4f4f4;
+}
+
+.header{
+  margin: 20px 0px 0px 0px;
+}
+
+.btn-save{
+  padding: 8px 40px;
+  border: 1px solid #2d5cff1f;
+  color: #70737c;
+  background: #a0b9ff59;
+}
+
+
+.btn-confirm{
+  padding: 8px 40px;
+  border: 1px solid #1bff2b;
+  color: #4adc41;
+  background: #ffffff;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-cancel{
+  background: transparent;
+  color: #ff5050;
+  border: none;
+}
+
+.modal-header{
+  background: #cccccc3b;
+}
+
+
+.time-slots{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.time-slots li{
+    list-style: none;
+    margin-bottom: 10px;
+    border: 1px solid #e8e8e8;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.selected-time{
+  border: 1px solid #2d5cff1f;
+  color: #267eea;
+  background: #a0b9ff59;
+}
+
+.ul-sch{
+  padding: 0px;
+  margin: 0px;
+}
+
+.ul-sch li{
+    list-style: none;
+    border: 1px solid #f9fef8;
+    border-radius: 4px;
+    padding: 8px 15px;
+    background: #fffffff2;
+    color: #3d3d3d;
+    box-shadow: 1px 1px 11px 1px #cccccc59;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.marker{
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #55d82a;
+  /* color: #4ffa24; */
+  display: inline-block;
+  margin-right: 10px;
+}

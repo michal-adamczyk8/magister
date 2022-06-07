@@ -1,0 +1,59 @@
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+<div class="login-container animated fadeInDown bootstrap snippets bootdeys">
+  <div class="loginbox bg-white">
+    <div class="loginbox-title">Zaloguj się</div>
+    <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm.value)">
+      <div class="loginbox-textbox">
+        <input
+          type="text"
+          name="username"
+          class="form-control"
+          placeholder="Nazwa uytkownika"
+          ngModel
+          #usernameInput="ngModel"
+          required
+        />
+        <span
+          style="color:red;"
+          *ngIf="usernameInput.invalid && usernameInput.touched"
+          >Podaj nazwę uytkownika.</span
+        >
+      </div>
+      <div class="loginbox-textbox">
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          placeholder="Hasło"
+          ngModel
+          #passwordInput="ngModel"
+          required
+        />
+        <span
+          class="help-block"
+          style="color:red;"
+          *ngIf="passwordInput.invalid && passwordInput.touched"
+          >Podaj hasło.</span
+        >
+      </div>
+      <div class="loginbox-submit">
+        <button type="submit" [disabled]="loginForm.invalid || showLoading" class="btn btn-primary btn-block">
+          <i *ngIf="showLoading" class="fas fa-spinner fa-spin"></i>&nbsp;&nbsp;
+          <span *ngIf="showLoading">Ładowanie...</span>
+          <span *ngIf="!showLoading">Zaloguj</span>
+        </button>
+      </div>
+    </form>
+    <div class="loginbox-forgot">
+      <a routerLink="/reset-password">Zapomniałeś hasła?</a>
+    </div>
+
+    <div class="loginbox-signup">
+      <a routerLink="/register">Zarejestruj się z użyciem maila</a>
+    </div>
+  </div>
+  <div class="logobox"></div>
+</div>
