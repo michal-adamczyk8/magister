@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa7af189-6abb-4e98-a604-62a909af56f6" name="Default Changelist" comment="" />
+    <list default="true" id="fa7af189-6abb-4e98-a604-62a909af56f6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -72,7 +76,7 @@
             <entry file="file://$PROJECT_DIR$/src/app/taker/taker-new/taker-new.component.ts">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="467">
-                  <caret line="64" column="33" lean-forward="true" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+                  <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
                   <folding>
                     <element signature="e#0#50#0" expanded="true" />
                   </folding>
@@ -239,9 +243,9 @@
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="1440" />
-    <option name="y" value="-180" />
+    <option name="y" value="-152" />
     <option name="width" value="1920" />
-    <option name="height" value="1080" />
+    <option name="height" value="1052" />
   </component>
   <component name="ProjectId" id="1lKgXA3ZUIlDxfj9glfRsVR8VTA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -329,7 +333,7 @@
     <property name="SearchEverywhereHistoryKey" value="shelterde&#9;FILE&#9;file:///Users/user/magister/angular/src/app/shelter/shelter-details/shelter-details.component.html&#10;pet&#9;FILE&#9;file:///Users/user/magister/angular/src/app/pet-shared/pet.ts&#10;pet-det&#9;null&#9;null&#10;shelter-ne&#9;FILE&#9;file:///Users/user/magister/angular/src/app/shelter/shelter-new/shelter-new.component.ts&#10;shelter-ite&#9;FILE&#9;file:///Users/user/magister/angular/src/app/shelter/shelter-list/shelter-item/shelter-item.component.ts&#10;TakerD&#9;FILE&#9;file:///Users/user/magister/angular/src/app/taker/taker-details/taker-details.component.html&#10;ShelterSer&#9;FILE&#9;file:///Users/user/magister/angular/src/app/shelter/shelter-shared/shelter.service.ts&#10;ShelterIte&#9;FILE&#9;file:///Users/user/magister/angular/src/app/shelter/shelter-list/shelter-item/shelter-item.component.ts&#10;TakerDe&#9;null&#9;null&#10;webpa&#9;FILE&#9;file:///Users/user/magister/angular/.angular/cache/angular-webpack" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1654643690914" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1654644643755" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -393,12 +397,12 @@
       <workItem from="1607202722311" duration="11396000" />
       <workItem from="1607351238173" duration="1621000" />
       <workItem from="1654632755132" duration="153000" />
-      <workItem from="1654633074302" duration="8273000" />
+      <workItem from="1654633074302" duration="8553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22318000" />
+    <option name="totallyTimeSpent" value="22598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-180" width="1920" height="1080" extended-state="0" />
@@ -421,7 +425,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="8" weight="0.32939634" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.1266464" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.4052685" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -751,7 +755,7 @@
     <entry file="file://$PROJECT_DIR$/src/app/taker/taker-new/taker-new.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
-          <caret line="64" column="33" lean-forward="true" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
