@@ -26,13 +26,13 @@ export class TakerListComponent implements OnInit {
     private takerService: TakerService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private authService: AuthenticationService
-  ) { 
+    private authService: AuthenticationService,
+  ) {
   }
 
   ngOnInit(): void {
     this.shelterId = +this.activatedRoute.snapshot.paramMap.get("shelterId");
-    
+
     this.retrieveTakers();
     this.isManagerOrAdmin = this.authService.isLoggedManagerOrAdmin();
   }

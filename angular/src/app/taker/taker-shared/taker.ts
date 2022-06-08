@@ -1,4 +1,5 @@
 import { Shelter } from 'src/app/shelter/shelter-shared/shelter';
+import {NewTakerRequest} from './new-taker-request';
 
 export class Taker{
     constructor (
@@ -11,6 +12,10 @@ export class Taker{
         private _shelter: Shelter,
         private _imageUrl: string
     ) {
+    }
+
+    toAddRequest(shelterId: number): NewTakerRequest {
+        return new NewTakerRequest(this.firstName, this.lastName, this._email, this.phoneNumber, this.imageUrl, shelterId)
     }
 
     public get id(): number {

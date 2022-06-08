@@ -12,7 +12,7 @@ services:
     volumes:
     - ./init.sql:/docker-entrypoint-initdb.d/init.sql
   walk-dog-backend:
-    build: .
+    build: walkdog
     container_name: app
     restart: always
     ports:
@@ -26,7 +26,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=compose-postgres
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
   walk-dog-frontend:
-    build: ../angular
+    build: angular
     container_name: front_app
     ports:
       - 4200:4200

@@ -7,9 +7,11 @@ import { Taker } from './taker';
 })
 export class TakerCache {
     takerSubject: BehaviorSubject<Taker>;
+    takerListSubject: BehaviorSubject<Array<Taker>>;
 
     constructor() {
         this.takerSubject = new BehaviorSubject(null);
+        this.takerListSubject = new BehaviorSubject(null)
     }
 
     update(taker: Taker):void {
