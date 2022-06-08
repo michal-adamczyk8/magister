@@ -8,6 +8,8 @@ import {NotificationService} from 'src/app/notification/notification.service';
 import {NotificationType} from 'src/app/enum/notification-type.enum';
 import {AuthenticationService} from 'src/app/security/authentication.service';
 import {NewTakerRequest} from '../taker-shared/new-taker-request';
+import {TakerCache} from '../taker-shared/taker-cache.service';
+import {Taker} from '../taker-shared/taker';
 
 @Component({
     selector: 'app-taker-new',
