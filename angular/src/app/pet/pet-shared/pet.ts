@@ -1,5 +1,5 @@
-import {Shelter} from '../shelter/shelter-shared/shelter';
-import {Taker} from '../taker/taker-shared/taker';
+import {Shelter} from '../../shelter/shelter-shared/shelter';
+import {Taker} from '../../taker/taker-shared/taker';
 
 export class Pet {
     public shelterDto: Shelter;

@@ -1,4 +1,4 @@
-import { WalkStatus } from '../enum/walk-status.enum';
+import { WalkStatus } from '../../enum/walk-status.enum';
 
 export class AddWalkRequest {
     constructor( 

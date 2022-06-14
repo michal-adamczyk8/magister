@@ -54,7 +54,6 @@ export class AllTakerListComponent implements OnInit {
         this.totalItems = takerPage.totalElements;
         this.currentSelectedPage = takerPage.number;
         this.itemsPerPage = this.totalItems / this.pageSize;
-        console.log(this.takers.length)
       },
       (error) => {
         console.log("Error: " + error);

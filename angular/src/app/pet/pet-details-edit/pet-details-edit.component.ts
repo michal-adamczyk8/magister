@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { PetService } from "src/app/pet-shared/pet-service";
-import { Pet } from "src/app/pet-shared/pet";
+import { PetService } from "src/app/pet/pet-shared/pet-service";
+import { Pet } from "src/app/pet/pet-shared/pet";
 import { Location } from "@angular/common";
 import { PetStatusEnum } from "src/app/enum/pet-status.enum";
 import { PetSexEnum } from "src/app/enum/pet-sex.enum";
@@ -13,7 +13,7 @@ import { NotificationService } from 'src/app/notification/notification.service';
 import { NotificationType } from 'src/app/enum/notification-type.enum';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from 'src/app/common/confirm-dialog/confirm-dialog.component';
-import { PetCache } from 'src/app/pet-shared/pet-cache.service';
+import { PetCache } from 'src/app/pet/pet-shared/pet-cache.service';
 
 @Component({
   selector: "app-pet-details-edit",

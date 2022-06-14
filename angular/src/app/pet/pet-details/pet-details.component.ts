@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, AfterViewChecked } from '@angular/core';
-import { PetService } from 'src/app/pet-shared/pet-service';
-import { Pet } from 'src/app/pet-shared/pet';
+import { PetService } from 'src/app/pet/pet-shared/pet-service';
+import { Pet } from 'src/app/pet/pet-shared/pet';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { Shelter } from 'src/app/shelter/shelter-shared/shelter';
 import { Location } from '@angular/common';
@@ -8,7 +8,7 @@ import { Taker } from 'src/app/taker/taker-shared/taker';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from 'src/app/common/confirm-dialog/confirm-dialog.component';
 import { AuthenticationService } from 'src/app/security/authentication.service';
-import { PetCache } from 'src/app/pet-shared/pet-cache.service';
+import { PetCache } from 'src/app/pet/pet-shared/pet-cache.service';
 
 
 @Component({

@@ -9,8 +9,8 @@ import { NotificationService } from '../notification/notification.service';
 import { NotificationType } from '../enum/notification-type.enum';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
-import { WalkService } from '../pet-shared/walk-service';
-import { Walk } from '../pet-shared/walk';
+import { WalkService } from '../pet/pet-shared/walk-service';
+import { Walk } from '../pet/pet-shared/walk';
 
 @Component({
   selector: 'app-user',
@@ -46,7 +46,6 @@ export class UserComponent implements OnInit {
   }
 
   public changeTitle(title: string): void {
-    console.log("Title: " + title);
     this.titleSubject.next(title);
   }
 
@@ -131,12 +130,10 @@ export class UserComponent implements OnInit {
   }
 
   public onAcceptWalk(walk: Walk): void {
-    console.log("accepting")
     this.walkService.confirmWalk(walk.id);
   }
 
   public onCancelWalk(walk: Walk): void {
-    console.log("cancelling")
     this.walkService.cancelWalk(walk.id);
   }
 

@@ -4,7 +4,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TakerPage } from './taker-page';
 import { Taker } from './taker';
-import { PetPage } from 'src/app/pet-shared/pet-page';
+import { PetPage } from 'src/app/pet/pet-shared/pet-page';
 import { NewTakerRequest } from './new-taker-request';
 
 @Injectable({

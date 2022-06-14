@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormGroup, FormControl, Validators, NgForm} from '@angular/forms';
 import {CustomValidators} from 'src/app/validators/custom-validators';
-import {PetService} from 'src/app/pet-shared/pet-service';
+import {PetService} from 'src/app/pet/pet-shared/pet-service';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {NotificationService} from 'src/app/notification/notification.service';

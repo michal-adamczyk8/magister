@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { WalkService } from 'src/app/pet-shared/walk-service';
-import { Pet } from 'src/app/pet-shared/pet';
+import { WalkService } from 'src/app/pet/pet-shared/walk-service';
+import { Pet } from 'src/app/pet/pet-shared/pet';
 import { User } from 'src/app/user/user';
-import { PetService } from 'src/app/pet-shared/pet-service';
+import { PetService } from 'src/app/pet/pet-shared/pet-service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NotificationService } from 'src/app/notification/notification.service';
 import { NotificationType } from 'src/app/enum/notification-type.enum';
@@ -47,7 +47,6 @@ export class WalkAppointmentComponent implements OnInit {
   };
 
   confirmSch = () => {
-    console.log("this is ", this.selectedDate);
     if (this.savedTime !== undefined) {
       const a = document.getElementById("cls");
       a.click();
@@ -56,7 +55,6 @@ export class WalkAppointmentComponent implements OnInit {
         date: this.selectedDate
       };
       this.finalObj.push(obj);
-      console.log("this is final ", this.finalObj);
     } else {
       this.showErr = true;
     }
