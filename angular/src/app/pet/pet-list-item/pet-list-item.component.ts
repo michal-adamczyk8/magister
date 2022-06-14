@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Pet } from 'src/app/pet-shared/pet';
+import { Pet } from 'src/app/pet/pet-shared/pet';
 import { Router } from '@angular/router';
-import { PetService } from 'src/app/pet-shared/pet-service';
+import { PetService } from 'src/app/pet/pet-shared/pet-service';
 
 @Component({
   selector: 'app-pet-list-item',

@@ -1,6 +1,6 @@
 import { Pet } from './pet';
-import { User } from '../user/user';
-import { WalkStatus } from '../enum/walk-status.enum';
+import { User } from '../../user/user';
+import { WalkStatus } from '../../enum/walk-status.enum';
 
 export class Walk {
     constructor(

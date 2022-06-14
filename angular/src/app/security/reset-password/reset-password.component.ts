@@ -26,7 +26,6 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   onResetPassword(user: User) {
-    console.log('reset-password')
     this.showLoading = true;
     this.subscriptions.push(
       this.authenticationService.resetPassword(user).subscribe(

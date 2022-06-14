@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewChecked } from "@angular/core";
-import { Pet } from "src/app/pet-shared/pet";
-import { PetService } from "src/app/pet-shared/pet-service";
-import { PetPage } from 'src/app/pet-shared/pet-page';
+import { Pet } from "src/app/pet/pet-shared/pet";
+import { PetService } from "src/app/pet/pet-shared/pet-service";
+import { PetPage } from 'src/app/pet/pet-shared/pet-page';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from 'src/app/common/confirm-dialog/confirm-dialog.component';

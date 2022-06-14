@@ -46,7 +46,7 @@ import { PaymentComponent } from './pet/payment/payment.component';
 import { UserComponent } from './user/user.component';
 import { ResetPasswordComponent } from './security/reset-password/reset-password.component';
 import { ShelterCache } from './shelter/shelter-shared/shelter-cache.service';
-import { PetCache } from './pet-shared/pet-cache.service';
+import { PetCache } from './pet/pet-shared/pet-cache.service';
 import { TakerCache } from './taker/taker-shared/taker-cache.service';
 
 @NgModule({

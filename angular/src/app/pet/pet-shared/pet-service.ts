@@ -4,10 +4,10 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { FormGroup } from '@angular/forms';
 import { PetPage } from './pet-page';
-import { environment } from '../../environments/environment'
-import {PetStatusEnum} from '../enum/pet-status.enum';
-import {PetSexEnum} from '../enum/pet-sex.enum';
-import {PetTypeEnum} from '../enum/pet-type.enum';
+import { environment } from '../../../environments/environment'
+import {PetStatusEnum} from '../../enum/pet-status.enum';
+import {PetSexEnum} from '../../enum/pet-sex.enum';
+import {PetTypeEnum} from '../../enum/pet-type.enum';
 
 @Injectable({
     providedIn: 'root',

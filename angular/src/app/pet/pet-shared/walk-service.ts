@@ -1,9 +1,9 @@
-import { environment } from '../../environments/environment'
+import { environment } from '../../../environments/environment'
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Walk } from './walk';
 import { AddWalkRequest } from './add-walk-request';
-import { WalkStatus } from '../enum/walk-status.enum';
+import { WalkStatus } from '../../enum/walk-status.enum';
 import { Injectable } from '@angular/core';
 
 @Injectable({
